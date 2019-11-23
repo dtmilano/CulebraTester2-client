@@ -12,11 +12,14 @@
 
 from __future__ import absolute_import
 
+import sys
 import unittest
 
+from culebratester_client import api
+
 import culebratester_client
-from api.default_api import DefaultApi  # noqa: E501
-from culebratester_client.rest import ApiException
+#from api.default_api import DefaultApi  # noqa: E501
+#from culebratester_client.rest import ApiException
 
 
 class TestDefaultApi(unittest.TestCase):
@@ -105,12 +108,23 @@ class TestDefaultApi(unittest.TestCase):
         """
         pass
 
-    def test_ui_device_dump_window_hierarchy_get(self):
+    def test_ui_device_dump_window_hierarchy_get_xml(self):
         """Test case for ui_device_dump_window_hierarchy_get
 
         Dumps the window hierarchy  # noqa: E501
         """
-        pass
+        api_instance = culebratester_client.DefaultApi(culebratester_client.ApiClient())
+        api_response = api_instance.ui_device_dump_window_hierarchy_get(format='XML')
+        print(api_response, file=sys.stderr)
+
+    def test_ui_device_dump_window_hierarchy_get_json(self):
+        """Test case for ui_device_dump_window_hierarchy_get
+
+        Dumps the window hierarchy  # noqa: E501
+        """
+        api_instance = culebratester_client.DefaultApi(culebratester_client.ApiClient())
+        api_response = api_instance.ui_device_dump_window_hierarchy_get(format='JSON')
+        print(api_response, file=sys.stderr)
 
     def test_ui_device_find_object_get(self):
         """Test case for ui_device_find_object_get
