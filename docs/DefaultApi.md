@@ -533,7 +533,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **ui_device_dump_window_hierarchy_get**
-> WindowHierarchy ui_device_dump_window_hierarchy_get()
+> WindowHierarchy ui_device_dump_window_hierarchy_get(format=format)
 
 Dumps the window hierarchy
 
@@ -549,17 +549,21 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = culebratester_client.DefaultApi()
+format = 'format_example' # str | the output format (optional)
 
 try:
     # Dumps the window hierarchy
-    api_response = api_instance.ui_device_dump_window_hierarchy_get()
+    api_response = api_instance.ui_device_dump_window_hierarchy_get(format=format)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling DefaultApi->ui_device_dump_window_hierarchy_get: %s\n" % e)
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **format** | **str**| the output format | [optional] 
 
 ### Return type
 
@@ -572,7 +576,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Accept**: application/json, application/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

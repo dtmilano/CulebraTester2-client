@@ -15,7 +15,8 @@ from __future__ import absolute_import
 import unittest
 
 import culebratester_client
-from models.help import Help  # noqa: E501
+#from models.help import Help  # noqa: E501
+from culebratester_client.models.help import Help  # noqa: E501
 from culebratester_client.rest import ApiException
 
 
@@ -31,7 +32,7 @@ class TestHelp(unittest.TestCase):
     def testHelp(self):
         """Test Help"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = culebratester_client.models.help.Help()  # noqa: E501
+        model = culebratester_client.models.help.Help('someApi')  # noqa: E501
         pass
 
 

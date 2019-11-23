@@ -15,8 +15,8 @@ from __future__ import absolute_import
 import unittest
 
 import culebratester_client
-from models.window_hierarchy import WindowHierarchy  # noqa: E501
-from culebratester_client.rest import ApiException
+#from models.window_hierarchy import WindowHierarchy  # noqa: E501
+#from culebratester_client.rest import ApiException
 
 
 class TestWindowHierarchy(unittest.TestCase):
@@ -31,7 +31,7 @@ class TestWindowHierarchy(unittest.TestCase):
     def testWindowHierarchy(self):
         """Test WindowHierarchy"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = culebratester_client.models.window_hierarchy.WindowHierarchy()  # noqa: E501
+        model = culebratester_client.models.window_hierarchy.WindowHierarchy()  # noqa: E501
         pass
 
 

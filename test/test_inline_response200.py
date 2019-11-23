@@ -31,7 +31,7 @@ class TestInlineResponse200(unittest.TestCase):
     def testInlineResponse200(self):
         """Test InlineResponse200"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = culebratester_client.models.inline_response200.InlineResponse200()  # noqa: E501
+        model = culebratester_client.models.inline_response200.InlineResponse200()  # noqa: E501
         pass
 
 

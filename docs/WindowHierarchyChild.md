@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **checkable** | **bool** |  | [optional] 
 **clickable** | **bool** |  | [optional] 
 **index** | **int** |  | [optional] 
-**content_description** | **int** |  | [optional] 
+**content_description** | **str** |  | [optional] 
 **focusable** | **bool** |  | [optional] 
 **resource_id** | **str** |  | [optional] 
 **enabled** | **bool** |  | [optional] 
