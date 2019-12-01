@@ -6,4 +6,4 @@ tag="v$version"
 git tag "$tag" || printf 'WARNING: tag "%s" already exists\n' "$tag"
 git push --tags
 python setup.py sdist bdist_wheel
-twine upload dist/*
+twine upload dist/culebratester_client-${version}-*
