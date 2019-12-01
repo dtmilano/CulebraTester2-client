@@ -20,6 +20,8 @@ Name | Type | Description | Notes
 **clazz** | **str** |  | [optional] 
 **scrollable** | **bool** |  | [optional] 
 **selected** | **bool** |  | [optional] 
+**checked** | **bool** |  | [optional] 
+**focused** | **bool** |  | [optional] 
 **bounds** | **list[int]** |  | [optional] 
 **children** | [**list[WindowHierarchyChild]**](WindowHierarchyChild.md) |  | [optional] 
 
