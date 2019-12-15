@@ -31,7 +31,7 @@ Method | HTTP request | Description
 [**ui_device_wait_for_window_update_get**](DefaultApi.md#ui_device_wait_for_window_update_get) | **GET** /uiDevice/waitForWindowUpdate | Waits for a window content update event to occur.
 [**ui_object2_oid_click_get**](DefaultApi.md#ui_object2_oid_click_get) | **GET** /uiObject2/{oid}/click | Clicks on the specified object.
 [**ui_object2_oid_dump_get**](DefaultApi.md#ui_object2_oid_dump_get) | **GET** /uiObject2/{oid}/dump | Dumps the specified object.
-[**ui_object2_oid_get_text_get**](DefaultApi.md#ui_object2_oid_get_text_get) | **GET** /uiObject2/{oid}/getText | Gets the text content if this object is an editable field.
+[**ui_object2_oid_get_text_get**](DefaultApi.md#ui_object2_oid_get_text_get) | **GET** /uiObject2/{oid}/getText | Gets the text content.
 [**ui_object2_oid_long_click_get**](DefaultApi.md#ui_object2_oid_long_click_get) | **GET** /uiObject2/{oid}/longClick | Long-clicks on the specified object.
 [**ui_object2_oid_set_text_post**](DefaultApi.md#ui_object2_oid_set_text_post) | **POST** /uiObject2/{oid}/setText | Sets the text content if this object is an editable field.
 
@@ -1292,7 +1292,7 @@ No authorization required
 # **ui_object2_oid_get_text_get**
 > Text ui_object2_oid_get_text_get(oid)
 
-Gets the text content if this object is an editable field.
+Gets the text content.
 
 The target object should have been found using `findObject` with a `selector`.
 
@@ -1309,7 +1309,7 @@ api_instance = culebratester_client.DefaultApi()
 oid = 56 # int | The object ID
 
 try:
-    # Gets the text content if this object is an editable field.
+    # Gets the text content.
     api_response = api_instance.ui_object2_oid_get_text_get(oid)
     pprint(api_response)
 except ApiException as e:
