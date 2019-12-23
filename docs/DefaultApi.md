@@ -25,6 +25,7 @@ Method | HTTP request | Description
 [**ui_device_press_enter_get**](DefaultApi.md#ui_device_press_enter_get) | **GET** /uiDevice/pressEnter | Simulates a short press on the ENTER key.
 [**ui_device_press_home_get**](DefaultApi.md#ui_device_press_home_get) | **GET** /uiDevice/pressHome | Simulates a short press on the HOME button.
 [**ui_device_press_key_code_get**](DefaultApi.md#ui_device_press_key_code_get) | **GET** /uiDevice/pressKeyCode | Simulates a short press using a key code.
+[**ui_device_press_recent_apps_get**](DefaultApi.md#ui_device_press_recent_apps_get) | **GET** /uiDevice/pressRecentApps | Simulates a short press on the Recent Apps button.
 [**ui_device_product_name_get**](DefaultApi.md#ui_device_product_name_get) | **GET** /uiDevice/productName | Retrieves the product name of the device.
 [**ui_device_screenshot_get**](DefaultApi.md#ui_device_screenshot_get) | **GET** /uiDevice/screenshot | Gets the device screenshot
 [**ui_device_wait_for_idle_get**](DefaultApi.md#ui_device_wait_for_idle_get) | **GET** /uiDevice/waitForIdle | Waits for the current application to idle.
@@ -1001,6 +1002,50 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **ui_device_press_recent_apps_get**
+> StatusResponse ui_device_press_recent_apps_get()
+
+Simulates a short press on the Recent Apps button.
+
+Simulates a short press on the Recent Apps button.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import culebratester_client
+from culebratester_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = culebratester_client.DefaultApi()
+
+try:
+    # Simulates a short press on the Recent Apps button.
+    api_response = api_instance.ui_device_press_recent_apps_get()
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling DefaultApi->ui_device_press_recent_apps_get: %s\n" % e)
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**StatusResponse**](StatusResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **ui_device_product_name_get**
 > ProductName ui_device_product_name_get()
 
@@ -1161,7 +1206,7 @@ from pprint import pprint
 # create an instance of the API class
 api_instance = culebratester_client.DefaultApi()
 timeout = 789 # int | in milliseconds
-package_name = 'package_name_example' # str | the specified window package name (can be null). If null, a window update from any front-end window will end the wait (optional)
+package_name = 'package_name_example' # str | the specified window package name (can be null or not present). If null, a window update from any front-end window will end the wait (optional)
 
 try:
     # Waits for a window content update event to occur.
@@ -1176,7 +1221,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **timeout** | **int**| in milliseconds | 
- **package_name** | **str**| the specified window package name (can be null). If null, a window update from any front-end window will end the wait | [optional] 
+ **package_name** | **str**| the specified window package name (can be null or not present). If null, a window update from any front-end window will end the wait | [optional] 
 
 ### Return type
 
