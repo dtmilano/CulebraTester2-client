@@ -1,10 +1,9 @@
-# Body
+# Body1
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**segments** | [**list[Point]**](Point.md) |  | [optional] 
-**segment_steps** | **int** |  | [optional] 
+**text** | **str** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

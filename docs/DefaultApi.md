@@ -28,6 +28,8 @@ Method | HTTP request | Description
 [**ui_device_press_recent_apps_get**](DefaultApi.md#ui_device_press_recent_apps_get) | **GET** /uiDevice/pressRecentApps | Simulates a short press on the Recent Apps button.
 [**ui_device_product_name_get**](DefaultApi.md#ui_device_product_name_get) | **GET** /uiDevice/productName | Retrieves the product name of the device.
 [**ui_device_screenshot_get**](DefaultApi.md#ui_device_screenshot_get) | **GET** /uiDevice/screenshot | Gets the device screenshot
+[**ui_device_swipe_get**](DefaultApi.md#ui_device_swipe_get) | **GET** /uiDevice/swipe | Performs a swipe.
+[**ui_device_swipe_post**](DefaultApi.md#ui_device_swipe_post) | **POST** /uiDevice/swipe | Performs a swipe between points in the Point array.
 [**ui_device_wait_for_idle_get**](DefaultApi.md#ui_device_wait_for_idle_get) | **GET** /uiDevice/waitForIdle | Waits for the current application to idle.
 [**ui_device_wait_for_window_update_get**](DefaultApi.md#ui_device_wait_for_window_update_get) | **GET** /uiDevice/waitForWindowUpdate | Waits for a window content update event to occur.
 [**ui_object2_oid_click_get**](DefaultApi.md#ui_object2_oid_click_get) | **GET** /uiObject2/{oid}/click | Clicks on the specified object.
@@ -1140,6 +1142,110 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **ui_device_swipe_get**
+> StatusResponse ui_device_swipe_get(start_x, start_y, end_x, end_y, steps)
+
+Performs a swipe.
+
+Performs a swipe from one coordinate to another using the number of steps to determine smoothness and speed. Each step execution is throttled to 5ms per step. So for a 100 steps, the swipe will take about 1/2 second to complete.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import culebratester_client
+from culebratester_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = culebratester_client.DefaultApi()
+start_x = 56 # int | from x
+start_y = 56 # int | from y
+end_x = 56 # int | to x
+end_y = 56 # int | end y
+steps = 56 # int | is the number of move steps sent to the system
+
+try:
+    # Performs a swipe.
+    api_response = api_instance.ui_device_swipe_get(start_x, start_y, end_x, end_y, steps)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling DefaultApi->ui_device_swipe_get: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **start_x** | **int**| from x | 
+ **start_y** | **int**| from y | 
+ **end_x** | **int**| to x | 
+ **end_y** | **int**| end y | 
+ **steps** | **int**| is the number of move steps sent to the system | 
+
+### Return type
+
+[**StatusResponse**](StatusResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ui_device_swipe_post**
+> StatusResponse ui_device_swipe_post(body=body)
+
+Performs a swipe between points in the Point array.
+
+Each step execution is throttled to 5ms per step. So for a 100 steps, the swipe will take about 1/2 second to complete
+
+### Example
+```python
+from __future__ import print_function
+import time
+import culebratester_client
+from culebratester_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = culebratester_client.DefaultApi()
+body = culebratester_client.Body() # Body |  (optional)
+
+try:
+    # Performs a swipe between points in the Point array.
+    api_response = api_instance.ui_device_swipe_post(body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling DefaultApi->ui_device_swipe_post: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**Body**](Body.md)|  | [optional] 
+
+### Return type
+
+[**StatusResponse**](StatusResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **ui_device_wait_for_idle_get**
 > StatusResponse ui_device_wait_for_idle_get(timeout=timeout)
 
@@ -1447,7 +1553,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = culebratester_client.DefaultApi()
-body = culebratester_client.Body() # Body | Text to enter in the field
+body = culebratester_client.Body1() # Body1 | Text to enter in the field
 oid = 56 # int | The object ID
 
 try:
@@ -1462,7 +1568,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Body**](Body.md)| Text to enter in the field | 
+ **body** | [**Body1**](Body1.md)| Text to enter in the field | 
  **oid** | **int**| The object ID | 
 
 ### Return type
