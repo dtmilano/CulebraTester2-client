@@ -1199,7 +1199,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **ui_device_swipe_post**
-> StatusResponse ui_device_swipe_post(body=body)
+> StatusResponse ui_device_swipe_post(body)
 
 Performs a swipe between points in the Point array.
 
@@ -1215,11 +1215,11 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = culebratester_client.DefaultApi()
-body = culebratester_client.Body() # Body |  (optional)
+body = culebratester_client.SwipeBody() # SwipeBody | 
 
 try:
     # Performs a swipe between points in the Point array.
-    api_response = api_instance.ui_device_swipe_post(body=body)
+    api_response = api_instance.ui_device_swipe_post(body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling DefaultApi->ui_device_swipe_post: %s\n" % e)
@@ -1229,7 +1229,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Body**](Body.md)|  | [optional] 
+ **body** | [**SwipeBody**](SwipeBody.md)|  | 
 
 ### Return type
 
@@ -1263,7 +1263,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = culebratester_client.DefaultApi()
-timeout = 789 # int | in milliseconds (optional)
+timeout = 10000 # int | in milliseconds (optional) (default to 10000)
 
 try:
     # Waits for the current application to idle.
@@ -1277,7 +1277,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **timeout** | **int**| in milliseconds | [optional] 
+ **timeout** | **int**| in milliseconds | [optional] [default to 10000]
 
 ### Return type
 
@@ -1553,7 +1553,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = culebratester_client.DefaultApi()
-body = culebratester_client.Body1() # Body1 | Text to enter in the field
+body = culebratester_client.OidSetTextBody() # OidSetTextBody | Text to enter in the field
 oid = 56 # int | The object ID
 
 try:
@@ -1568,7 +1568,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Body1**](Body1.md)| Text to enter in the field | 
+ **body** | [**OidSetTextBody**](OidSetTextBody.md)| Text to enter in the field | 
  **oid** | **int**| The object ID | 
 
 ### Return type
