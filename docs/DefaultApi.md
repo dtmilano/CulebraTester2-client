@@ -7,7 +7,9 @@ Method | HTTP request | Description
 [**culebra_help_api_get**](DefaultApi.md#culebra_help_api_get) | **GET** /culebra/help/{api} | Gets help
 [**culebra_info_get**](DefaultApi.md#culebra_info_get) | **GET** /culebra/info | Gets information about this app
 [**device_display_real_size_get**](DefaultApi.md#device_display_real_size_get) | **GET** /device/displayRealSize | Gets display real size
+[**object_store_clear_get**](DefaultApi.md#object_store_clear_get) | **GET** /objectStore/clear | Clears all the objects in store
 [**object_store_list_get**](DefaultApi.md#object_store_list_get) | **GET** /objectStore/list | Lists the objects in store
+[**object_store_remove_get**](DefaultApi.md#object_store_remove_get) | **GET** /objectStore/remove | Removes an object
 [**target_context_start_activity_get**](DefaultApi.md#target_context_start_activity_get) | **GET** /targetContext/startActivity | Starts an Activity
 [**ui_device_click_get**](DefaultApi.md#ui_device_click_get) | **GET** /uiDevice/click | Clicks at the specified location
 [**ui_device_current_package_name_get**](DefaultApi.md#ui_device_current_package_name_get) | **GET** /uiDevice/currentPackageName | Gets the current package name
@@ -174,6 +176,50 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **object_store_clear_get**
+> StatusResponse object_store_clear_get()
+
+Clears all the objects in store
+
+Clears all the objects in store
+
+### Example
+```python
+from __future__ import print_function
+import time
+import culebratester_client
+from culebratester_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = culebratester_client.DefaultApi()
+
+try:
+    # Clears all the objects in store
+    api_response = api_instance.object_store_clear_get()
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling DefaultApi->object_store_clear_get: %s\n" % e)
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**StatusResponse**](StatusResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **object_store_list_get**
 > list[InlineResponse200] object_store_list_get()
 
@@ -206,6 +252,54 @@ This endpoint does not need any parameter.
 ### Return type
 
 [**list[InlineResponse200]**](InlineResponse200.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **object_store_remove_get**
+> StatusResponse object_store_remove_get(oid)
+
+Removes an object
+
+Removes an object that has been stored in ObjectStore
+
+### Example
+```python
+from __future__ import print_function
+import time
+import culebratester_client
+from culebratester_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = culebratester_client.DefaultApi()
+oid = 56 # int | The object ID
+
+try:
+    # Removes an object
+    api_response = api_instance.object_store_remove_get(oid)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling DefaultApi->object_store_remove_get: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **oid** | **int**| The object ID | 
+
+### Return type
+
+[**StatusResponse**](StatusResponse.md)
 
 ### Authorization
 

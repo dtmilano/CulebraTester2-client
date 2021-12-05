@@ -1,8 +1,23 @@
 #! /bin/bash
 
 set -e
+dry_run=
+
 eval $(grep 'VERSION *=' setup.py | tr '[:upper:]' '[:lower:]' | sed 's/ *= */=/')
 tag="v$version"
-git tag "$tag" || printf 'WARNING: tag "%s" already exists\n' "$tag"
-git push --tags
+title="v$version"
+$dry_run git tag "$tag" || printf 'WARNING: tag "%s" already exists\n' "$tag"
+$dry_run git push --tags
+blue=$(tput setaf 32)
+sgr0=$(tput sgr0)
+
+if which -s gh
+then
+    $dry_run gh release create --title "$title" "$tag"
+else
+    printf '\nNext steps:\n'
+    printf '1. Create new release on Github using tag=%s title=%s\n' "$tag" "$title"
+    printf '    url: %s%s%s\n' "${blue}" 'https://github.com/dtmilano/AndroidViewClient/releases/new' "${sgr0}"
+fi
+
 printf '😼 Now Github Actions should follow...\n'
