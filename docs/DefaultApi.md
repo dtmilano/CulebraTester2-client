@@ -34,10 +34,12 @@ Method | HTTP request | Description
 [**ui_device_swipe_post**](DefaultApi.md#ui_device_swipe_post) | **POST** /uiDevice/swipe | Performs a swipe between points in the Point array.
 [**ui_device_wait_for_idle_get**](DefaultApi.md#ui_device_wait_for_idle_get) | **GET** /uiDevice/waitForIdle | Waits for the current application to idle.
 [**ui_device_wait_for_window_update_get**](DefaultApi.md#ui_device_wait_for_window_update_get) | **GET** /uiDevice/waitForWindowUpdate | Waits for a window content update event to occur.
+[**ui_object2_oid_clear_get**](DefaultApi.md#ui_object2_oid_clear_get) | **GET** /uiObject2/{oid}/clear | Clears the text content if this object is an editable field.
 [**ui_object2_oid_click_get**](DefaultApi.md#ui_object2_oid_click_get) | **GET** /uiObject2/{oid}/click | Clicks on the specified object.
 [**ui_object2_oid_dump_get**](DefaultApi.md#ui_object2_oid_dump_get) | **GET** /uiObject2/{oid}/dump | Dumps the specified object.
 [**ui_object2_oid_get_text_get**](DefaultApi.md#ui_object2_oid_get_text_get) | **GET** /uiObject2/{oid}/getText | Gets the text content.
 [**ui_object2_oid_long_click_get**](DefaultApi.md#ui_object2_oid_long_click_get) | **GET** /uiObject2/{oid}/longClick | Long-clicks on the specified object.
+[**ui_object2_oid_set_text_get**](DefaultApi.md#ui_object2_oid_set_text_get) | **GET** /uiObject2/{oid}/setText | Sets the text content if this object is an editable field.
 [**ui_object2_oid_set_text_post**](DefaultApi.md#ui_object2_oid_set_text_post) | **POST** /uiObject2/{oid}/setText | Sets the text content if this object is an editable field.
 
 # **culebra_help_api_get**
@@ -1438,6 +1440,54 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **ui_object2_oid_clear_get**
+> StatusResponse ui_object2_oid_clear_get(oid)
+
+Clears the text content if this object is an editable field.
+
+The target object should have been found using `findObject` with a `selector`.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import culebratester_client
+from culebratester_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = culebratester_client.DefaultApi()
+oid = 56 # int | The object ID
+
+try:
+    # Clears the text content if this object is an editable field.
+    api_response = api_instance.ui_object2_oid_clear_get(oid)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling DefaultApi->ui_object2_oid_clear_get: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **oid** | **int**| The object ID | 
+
+### Return type
+
+[**StatusResponse**](StatusResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **ui_object2_oid_click_get**
 > StatusResponse ui_object2_oid_click_get(oid)
 
@@ -1630,6 +1680,56 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **ui_object2_oid_set_text_get**
+> StatusResponse ui_object2_oid_set_text_get(oid, text)
+
+Sets the text content if this object is an editable field.
+
+The target object should have been found using `findObject` with a `selector`.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import culebratester_client
+from culebratester_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = culebratester_client.DefaultApi()
+oid = 56 # int | The object ID
+text = 'text_example' # str | Text to enter in the field
+
+try:
+    # Sets the text content if this object is an editable field.
+    api_response = api_instance.ui_object2_oid_set_text_get(oid, text)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling DefaultApi->ui_object2_oid_set_text_get: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **oid** | **int**| The object ID | 
+ **text** | **str**| Text to enter in the field | 
+
+### Return type
+
+[**StatusResponse**](StatusResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **ui_object2_oid_set_text_post**
 > StatusResponse ui_object2_oid_set_text_post(body, oid)
 
@@ -1647,7 +1747,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = culebratester_client.DefaultApi()
-body = culebratester_client.OidSetTextBody() # OidSetTextBody | Text to enter in the field
+body = culebratester_client.Text() # Text | Text to enter in the field
 oid = 56 # int | The object ID
 
 try:
@@ -1662,7 +1762,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**OidSetTextBody**](OidSetTextBody.md)| Text to enter in the field | 
+ **body** | [**Text**](Text.md)| Text to enter in the field | 
  **oid** | **int**| The object ID | 
 
 ### Return type
