@@ -34,6 +34,7 @@ Method | HTTP request | Description
 [**ui_device_swipe_post**](DefaultApi.md#ui_device_swipe_post) | **POST** /uiDevice/swipe | Performs a swipe between points in the Point array.
 [**ui_device_wait_for_idle_get**](DefaultApi.md#ui_device_wait_for_idle_get) | **GET** /uiDevice/waitForIdle | Waits for the current application to idle.
 [**ui_device_wait_for_window_update_get**](DefaultApi.md#ui_device_wait_for_window_update_get) | **GET** /uiDevice/waitForWindowUpdate | Waits for a window content update event to occur.
+[**ui_device_wait_get**](DefaultApi.md#ui_device_wait_get) | **GET** /uiDevice/wait | Waits for given the condition to be met.
 [**ui_object2_oid_clear_get**](DefaultApi.md#ui_object2_oid_clear_get) | **GET** /uiObject2/{oid}/clear | Clears the text content if this object is an editable field.
 [**ui_object2_oid_click_get**](DefaultApi.md#ui_object2_oid_click_get) | **GET** /uiObject2/{oid}/click | Clicks on the specified object.
 [**ui_object2_oid_dump_get**](DefaultApi.md#ui_object2_oid_dump_get) | **GET** /uiObject2/{oid}/dump | Dumps the specified object.
@@ -41,6 +42,7 @@ Method | HTTP request | Description
 [**ui_object2_oid_long_click_get**](DefaultApi.md#ui_object2_oid_long_click_get) | **GET** /uiObject2/{oid}/longClick | Long-clicks on the specified object.
 [**ui_object2_oid_set_text_get**](DefaultApi.md#ui_object2_oid_set_text_get) | **GET** /uiObject2/{oid}/setText | Sets the text content if this object is an editable field.
 [**ui_object2_oid_set_text_post**](DefaultApi.md#ui_object2_oid_set_text_post) | **POST** /uiObject2/{oid}/setText | Sets the text content if this object is an editable field.
+[**until_find_object_get**](DefaultApi.md#until_find_object_get) | **GET** /until/findObject | Returns a SearchCondition that is satisfied when at least one element matching the selector can be found.
 
 # **culebra_help_api_get**
 > Help culebra_help_api_get(api)
@@ -1440,6 +1442,56 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **ui_device_wait_get**
+> ObjectRef ui_device_wait_get(search_condition_ref, timeout=timeout)
+
+Waits for given the condition to be met.
+
+The final result returned by the condition, or null if the condition was not met before the timeout.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import culebratester_client
+from culebratester_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = culebratester_client.DefaultApi()
+search_condition_ref = 789 # int | The search condition
+timeout = 789 # int | The timeout in ms (optional)
+
+try:
+    # Waits for given the condition to be met.
+    api_response = api_instance.ui_device_wait_get(search_condition_ref, timeout=timeout)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling DefaultApi->ui_device_wait_get: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **search_condition_ref** | **int**| The search condition | 
+ **timeout** | **int**| The timeout in ms | [optional] 
+
+### Return type
+
+[**ObjectRef**](ObjectRef.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **ui_object2_oid_clear_get**
 > StatusResponse ui_object2_oid_clear_get(oid)
 
@@ -1776,6 +1828,54 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **until_find_object_get**
+> ObjectRef until_find_object_get(by_selector=by_selector)
+
+Returns a SearchCondition that is satisfied when at least one element matching the selector can be found.
+
+The condition will return the first matching element.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import culebratester_client
+from culebratester_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = culebratester_client.DefaultApi()
+by_selector = 'by_selector_example' # str | the selector sets the resource name criteria for matching. A UI element will be considered a match if its resource name exactly matches the selector parameter and all other criteria for this selector are met. The format of the selector string is `sel@[$]value,...` Where `sel` can be one of - checkable - clazz - clickable - depth - desc - package - res - scrollable - text `@` replaces the `=` sign that is used to separate parameters and values in the URL. If the first character of value is `$` then a `Pattern` is created. (optional)
+
+try:
+    # Returns a SearchCondition that is satisfied when at least one element matching the selector can be found.
+    api_response = api_instance.until_find_object_get(by_selector=by_selector)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling DefaultApi->until_find_object_get: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **by_selector** | **str**| the selector sets the resource name criteria for matching. A UI element will be considered a match if its resource name exactly matches the selector parameter and all other criteria for this selector are met. The format of the selector string is &#x60;sel@[$]value,...&#x60; Where &#x60;sel&#x60; can be one of - checkable - clazz - clickable - depth - desc - package - res - scrollable - text &#x60;@&#x60; replaces the &#x60;&#x3D;&#x60; sign that is used to separate parameters and values in the URL. If the first character of value is &#x60;$&#x60; then a &#x60;Pattern&#x60; is created. | [optional] 
+
+### Return type
+
+[**ObjectRef**](ObjectRef.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
