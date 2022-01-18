@@ -36,6 +36,7 @@ Method | HTTP request | Description
 [**ui_device_wait_for_window_update_get**](DefaultApi.md#ui_device_wait_for_window_update_get) | **GET** /uiDevice/waitForWindowUpdate | Waits for a window content update event to occur.
 [**ui_device_wait_get**](DefaultApi.md#ui_device_wait_get) | **GET** /uiDevice/wait | Waits for given the condition to be met.
 [**ui_object2_oid_clear_get**](DefaultApi.md#ui_object2_oid_clear_get) | **GET** /uiObject2/{oid}/clear | Clears the text content if this object is an editable field.
+[**ui_object2_oid_click_and_wait_get**](DefaultApi.md#ui_object2_oid_click_and_wait_get) | **GET** /uiObject2/{oid}/clickAndWait | Clicks on the specified object.
 [**ui_object2_oid_click_get**](DefaultApi.md#ui_object2_oid_click_get) | **GET** /uiObject2/{oid}/click | Clicks on the specified object.
 [**ui_object2_oid_dump_get**](DefaultApi.md#ui_object2_oid_dump_get) | **GET** /uiObject2/{oid}/dump | Dumps the specified object.
 [**ui_object2_oid_get_text_get**](DefaultApi.md#ui_object2_oid_get_text_get) | **GET** /uiObject2/{oid}/getText | Gets the text content.
@@ -43,6 +44,7 @@ Method | HTTP request | Description
 [**ui_object2_oid_set_text_get**](DefaultApi.md#ui_object2_oid_set_text_get) | **GET** /uiObject2/{oid}/setText | Sets the text content if this object is an editable field.
 [**ui_object2_oid_set_text_post**](DefaultApi.md#ui_object2_oid_set_text_post) | **POST** /uiObject2/{oid}/setText | Sets the text content if this object is an editable field.
 [**until_find_object_get**](DefaultApi.md#until_find_object_get) | **GET** /until/findObject | Returns a SearchCondition that is satisfied when at least one element matching the selector can be found.
+[**until_new_window_get**](DefaultApi.md#until_new_window_get) | **GET** /until/newWindow | Returns a condition that depends on a new window having appeared.
 
 # **culebra_help_api_get**
 > Help culebra_help_api_get(api)
@@ -1540,6 +1542,58 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **ui_object2_oid_click_and_wait_get**
+> StatusResponse ui_object2_oid_click_and_wait_get(oid, event_condition_ref, timeout=timeout)
+
+Clicks on the specified object.
+
+The target object should have been found using `findObject` with a `selector`.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import culebratester_client
+from culebratester_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = culebratester_client.DefaultApi()
+oid = 56 # int | The object ID
+event_condition_ref = 789 # int | The event condition
+timeout = 10000 # int | in milliseconds (optional) (default to 10000)
+
+try:
+    # Clicks on the specified object.
+    api_response = api_instance.ui_object2_oid_click_and_wait_get(oid, event_condition_ref, timeout=timeout)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling DefaultApi->ui_object2_oid_click_and_wait_get: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **oid** | **int**| The object ID | 
+ **event_condition_ref** | **int**| The event condition | 
+ **timeout** | **int**| in milliseconds | [optional] [default to 10000]
+
+### Return type
+
+[**StatusResponse**](StatusResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **ui_object2_oid_click_get**
 > StatusResponse ui_object2_oid_click_get(oid)
 
@@ -1864,6 +1918,50 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **by_selector** | **str**| the selector sets the resource name criteria for matching. A UI element will be considered a match if its resource name exactly matches the selector parameter and all other criteria for this selector are met. The format of the selector string is &#x60;sel@[$]value,...&#x60; Where &#x60;sel&#x60; can be one of - checkable - clazz - clickable - depth - desc - package - res - scrollable - text &#x60;@&#x60; replaces the &#x60;&#x3D;&#x60; sign that is used to separate parameters and values in the URL. If the first character of value is &#x60;$&#x60; then a &#x60;Pattern&#x60; is created. | [optional] 
+
+### Return type
+
+[**ObjectRef**](ObjectRef.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **until_new_window_get**
+> ObjectRef until_new_window_get()
+
+Returns a condition that depends on a new window having appeared.
+
+Returns a condition that depends on a new window having appeared.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import culebratester_client
+from culebratester_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = culebratester_client.DefaultApi()
+
+try:
+    # Returns a condition that depends on a new window having appeared.
+    api_response = api_instance.until_new_window_get()
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling DefaultApi->until_new_window_get: %s\n" % e)
+```
+
+### Parameters
+This endpoint does not need any parameter.
 
 ### Return type
 
