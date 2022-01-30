@@ -5,22 +5,26 @@ All URIs are relative to *http://localhost:9987/v2*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**culebra_help_api_get**](DefaultApi.md#culebra_help_api_get) | **GET** /culebra/help/{api} | Gets help
-[**culebra_info_get**](DefaultApi.md#culebra_info_get) | **GET** /culebra/info | Gets information about this app
-[**device_display_real_size_get**](DefaultApi.md#device_display_real_size_get) | **GET** /device/displayRealSize | Gets display real size
-[**object_store_clear_get**](DefaultApi.md#object_store_clear_get) | **GET** /objectStore/clear | Clears all the objects in store
-[**object_store_list_get**](DefaultApi.md#object_store_list_get) | **GET** /objectStore/list | Lists the objects in store
-[**object_store_remove_get**](DefaultApi.md#object_store_remove_get) | **GET** /objectStore/remove | Removes an object
-[**target_context_start_activity_get**](DefaultApi.md#target_context_start_activity_get) | **GET** /targetContext/startActivity | Starts an Activity
-[**ui_device_click_get**](DefaultApi.md#ui_device_click_get) | **GET** /uiDevice/click | Clicks at the specified location
-[**ui_device_current_package_name_get**](DefaultApi.md#ui_device_current_package_name_get) | **GET** /uiDevice/currentPackageName | Gets the current package name
-[**ui_device_display_height_get**](DefaultApi.md#ui_device_display_height_get) | **GET** /uiDevice/displayHeight | Gets the display height
-[**ui_device_display_rotation_get**](DefaultApi.md#ui_device_display_rotation_get) | **GET** /uiDevice/displayRotation | Gets the display rotation
-[**ui_device_display_size_dp_get**](DefaultApi.md#ui_device_display_size_dp_get) | **GET** /uiDevice/displaySizeDp | Gets the display size in DP
-[**ui_device_display_width_get**](DefaultApi.md#ui_device_display_width_get) | **GET** /uiDevice/displayWidth | Gets the display width
-[**ui_device_dump_window_hierarchy_get**](DefaultApi.md#ui_device_dump_window_hierarchy_get) | **GET** /uiDevice/dumpWindowHierarchy | Dumps the window hierarchy
-[**ui_device_find_object_get**](DefaultApi.md#ui_device_find_object_get) | **GET** /uiDevice/findObject | Finds an object
-[**ui_device_find_object_post**](DefaultApi.md#ui_device_find_object_post) | **POST** /uiDevice/findObject | Finds an object
+[**culebra_info_get**](DefaultApi.md#culebra_info_get) | **GET** /culebra/info | Gets information about this app.
+[**device_display_real_size_get**](DefaultApi.md#device_display_real_size_get) | **GET** /device/displayRealSize | Gets display real size.
+[**object_store_clear_get**](DefaultApi.md#object_store_clear_get) | **GET** /objectStore/clear | Clears all the objects in store.
+[**object_store_list_get**](DefaultApi.md#object_store_list_get) | **GET** /objectStore/list | Lists the objects in store.
+[**object_store_remove_get**](DefaultApi.md#object_store_remove_get) | **GET** /objectStore/remove | Removes an object.
+[**target_context_start_activity_get**](DefaultApi.md#target_context_start_activity_get) | **GET** /targetContext/startActivity | Starts an Activity.
+[**ui_device_clear_last_traversed_text_get**](DefaultApi.md#ui_device_clear_last_traversed_text_get) | **GET** /uiDevice/clearLastTraversedText | Clears the text from the last UI traversal event.
+[**ui_device_click_get**](DefaultApi.md#ui_device_click_get) | **GET** /uiDevice/click | Clicks at the specified location.
+[**ui_device_current_package_name_get**](DefaultApi.md#ui_device_current_package_name_get) | **GET** /uiDevice/currentPackageName | Gets the current package name.
+[**ui_device_display_height_get**](DefaultApi.md#ui_device_display_height_get) | **GET** /uiDevice/displayHeight | Gets the display height.
+[**ui_device_display_rotation_get**](DefaultApi.md#ui_device_display_rotation_get) | **GET** /uiDevice/displayRotation | Gets the display rotation.
+[**ui_device_display_size_dp_get**](DefaultApi.md#ui_device_display_size_dp_get) | **GET** /uiDevice/displaySizeDp | Gets the display size in DP.
+[**ui_device_display_width_get**](DefaultApi.md#ui_device_display_width_get) | **GET** /uiDevice/displayWidth | Gets the display width.
+[**ui_device_drag_get**](DefaultApi.md#ui_device_drag_get) | **GET** /uiDevice/drag | Performs a swipe from one coordinate to another coordinate.
+[**ui_device_dump_window_hierarchy_get**](DefaultApi.md#ui_device_dump_window_hierarchy_get) | **GET** /uiDevice/dumpWindowHierarchy | Dumps the window hierarchy.
+[**ui_device_find_object_get**](DefaultApi.md#ui_device_find_object_get) | **GET** /uiDevice/findObject | Finds an object.
+[**ui_device_find_object_post**](DefaultApi.md#ui_device_find_object_post) | **POST** /uiDevice/findObject | Finds an object.
 [**ui_device_find_objects_get**](DefaultApi.md#ui_device_find_objects_get) | **GET** /uiDevice/findObjects | Finds *all* objects that match the selector criteria.
+[**ui_device_freeze_rotation_get**](DefaultApi.md#ui_device_freeze_rotation_get) | **GET** /uiDevice/freezeRotation | Disables the sensors and freezes the device rotation at its current rotation state.
+[**ui_device_has_object_get**](DefaultApi.md#ui_device_has_object_get) | **GET** /uiDevice/hasObject | Returns whether there is a match for the given selector criteria.
 [**ui_device_last_traversed_text_get**](DefaultApi.md#ui_device_last_traversed_text_get) | **GET** /uiDevice/lastTraversedText | Retrieves the text from the last UI traversal event received.
 [**ui_device_press_back_get**](DefaultApi.md#ui_device_press_back_get) | **GET** /uiDevice/pressBack | Simulates a short press on the BACK button.
 [**ui_device_press_delete_get**](DefaultApi.md#ui_device_press_delete_get) | **GET** /uiDevice/pressDelete | Simulates a short press on the DELETE key.
@@ -29,7 +33,7 @@ Method | HTTP request | Description
 [**ui_device_press_key_code_get**](DefaultApi.md#ui_device_press_key_code_get) | **GET** /uiDevice/pressKeyCode | Simulates a short press using a key code.
 [**ui_device_press_recent_apps_get**](DefaultApi.md#ui_device_press_recent_apps_get) | **GET** /uiDevice/pressRecentApps | Simulates a short press on the Recent Apps button.
 [**ui_device_product_name_get**](DefaultApi.md#ui_device_product_name_get) | **GET** /uiDevice/productName | Retrieves the product name of the device.
-[**ui_device_screenshot_get**](DefaultApi.md#ui_device_screenshot_get) | **GET** /uiDevice/screenshot | Gets the device screenshot
+[**ui_device_screenshot_get**](DefaultApi.md#ui_device_screenshot_get) | **GET** /uiDevice/screenshot | Gets the device screenshot.
 [**ui_device_swipe_get**](DefaultApi.md#ui_device_swipe_get) | **GET** /uiDevice/swipe | Performs a swipe.
 [**ui_device_swipe_post**](DefaultApi.md#ui_device_swipe_post) | **POST** /uiDevice/swipe | Performs a swipe between points in the Point array.
 [**ui_device_wait_for_idle_get**](DefaultApi.md#ui_device_wait_for_idle_get) | **GET** /uiDevice/waitForIdle | Waits for the current application to idle.
@@ -97,9 +101,9 @@ No authorization required
 # **culebra_info_get**
 > CulebraInfo culebra_info_get()
 
-Gets information about this app
+Gets information about this app.
 
-Gets information about this app
+Gets information about this app.
 
 ### Example
 ```python
@@ -113,7 +117,7 @@ from pprint import pprint
 api_instance = culebratester_client.DefaultApi()
 
 try:
-    # Gets information about this app
+    # Gets information about this app.
     api_response = api_instance.culebra_info_get()
     pprint(api_response)
 except ApiException as e:
@@ -141,9 +145,9 @@ No authorization required
 # **device_display_real_size_get**
 > DisplayRealSize device_display_real_size_get()
 
-Gets display real size
+Gets display real size.
 
-Gets the display real size
+Gets the display real size.
 
 ### Example
 ```python
@@ -157,7 +161,7 @@ from pprint import pprint
 api_instance = culebratester_client.DefaultApi()
 
 try:
-    # Gets display real size
+    # Gets display real size.
     api_response = api_instance.device_display_real_size_get()
     pprint(api_response)
 except ApiException as e:
@@ -185,9 +189,9 @@ No authorization required
 # **object_store_clear_get**
 > StatusResponse object_store_clear_get()
 
-Clears all the objects in store
+Clears all the objects in store.
 
-Clears all the objects in store
+Clears all the objects in store.
 
 ### Example
 ```python
@@ -201,7 +205,7 @@ from pprint import pprint
 api_instance = culebratester_client.DefaultApi()
 
 try:
-    # Clears all the objects in store
+    # Clears all the objects in store.
     api_response = api_instance.object_store_clear_get()
     pprint(api_response)
 except ApiException as e:
@@ -229,9 +233,9 @@ No authorization required
 # **object_store_list_get**
 > list[InlineResponse200] object_store_list_get()
 
-Lists the objects in store
+Lists the objects in store.
 
-Lists the objects in store
+Lists the objects in store.
 
 ### Example
 ```python
@@ -245,7 +249,7 @@ from pprint import pprint
 api_instance = culebratester_client.DefaultApi()
 
 try:
-    # Lists the objects in store
+    # Lists the objects in store.
     api_response = api_instance.object_store_list_get()
     pprint(api_response)
 except ApiException as e:
@@ -273,9 +277,9 @@ No authorization required
 # **object_store_remove_get**
 > StatusResponse object_store_remove_get(oid)
 
-Removes an object
+Removes an object.
 
-Removes an object that has been stored in ObjectStore
+Removes an object that has been stored in ObjectStore.
 
 ### Example
 ```python
@@ -290,7 +294,7 @@ api_instance = culebratester_client.DefaultApi()
 oid = 56 # int | The object ID
 
 try:
-    # Removes an object
+    # Removes an object.
     api_response = api_instance.object_store_remove_get(oid)
     pprint(api_response)
 except ApiException as e:
@@ -321,9 +325,9 @@ No authorization required
 # **target_context_start_activity_get**
 > StatusResponse target_context_start_activity_get(pkg, cls)
 
-Starts an Activity
+Starts an Activity.
 
-Starts an Activity
+Starts an Activity.
 
 ### Example
 ```python
@@ -339,7 +343,7 @@ pkg = 'pkg_example' # str | the package name
 cls = 'cls_example' # str | the class name
 
 try:
-    # Starts an Activity
+    # Starts an Activity.
     api_response = api_instance.target_context_start_activity_get(pkg, cls)
     pprint(api_response)
 except ApiException as e:
@@ -368,12 +372,56 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **ui_device_clear_last_traversed_text_get**
+> StatusResponse ui_device_clear_last_traversed_text_get()
+
+Clears the text from the last UI traversal event.
+
+Clears the text from the last UI traversal event.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import culebratester_client
+from culebratester_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = culebratester_client.DefaultApi()
+
+try:
+    # Clears the text from the last UI traversal event.
+    api_response = api_instance.ui_device_clear_last_traversed_text_get()
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling DefaultApi->ui_device_clear_last_traversed_text_get: %s\n" % e)
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**StatusResponse**](StatusResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **ui_device_click_get**
 > StatusResponse ui_device_click_get(x, y)
 
-Clicks at the specified location
+Clicks at the specified location.
 
-Clicks at the specified location
+Clicks at the specified location.
 
 ### Example
 ```python
@@ -389,7 +437,7 @@ x = 56 # int | x coordinate
 y = 56 # int | y coordinate
 
 try:
-    # Clicks at the specified location
+    # Clicks at the specified location.
     api_response = api_instance.ui_device_click_get(x, y)
     pprint(api_response)
 except ApiException as e:
@@ -421,9 +469,9 @@ No authorization required
 # **ui_device_current_package_name_get**
 > CurrentPackageName ui_device_current_package_name_get()
 
-Gets the current package name
+Gets the current package name.
 
-Gets the current package name
+Gets the current package name.
 
 ### Example
 ```python
@@ -437,7 +485,7 @@ from pprint import pprint
 api_instance = culebratester_client.DefaultApi()
 
 try:
-    # Gets the current package name
+    # Gets the current package name.
     api_response = api_instance.ui_device_current_package_name_get()
     pprint(api_response)
 except ApiException as e:
@@ -465,9 +513,9 @@ No authorization required
 # **ui_device_display_height_get**
 > DisplayHeight ui_device_display_height_get()
 
-Gets the display height
+Gets the display height.
 
-Gets the display height
+Gets the display height.
 
 ### Example
 ```python
@@ -481,7 +529,7 @@ from pprint import pprint
 api_instance = culebratester_client.DefaultApi()
 
 try:
-    # Gets the display height
+    # Gets the display height.
     api_response = api_instance.ui_device_display_height_get()
     pprint(api_response)
 except ApiException as e:
@@ -509,9 +557,9 @@ No authorization required
 # **ui_device_display_rotation_get**
 > DisplayRotation ui_device_display_rotation_get()
 
-Gets the display rotation
+Gets the display rotation.
 
-Gets the display rotation
+Gets the display rotation.
 
 ### Example
 ```python
@@ -525,7 +573,7 @@ from pprint import pprint
 api_instance = culebratester_client.DefaultApi()
 
 try:
-    # Gets the display rotation
+    # Gets the display rotation.
     api_response = api_instance.ui_device_display_rotation_get()
     pprint(api_response)
 except ApiException as e:
@@ -553,9 +601,9 @@ No authorization required
 # **ui_device_display_size_dp_get**
 > DisplaySizeDp ui_device_display_size_dp_get()
 
-Gets the display size in DP
+Gets the display size in DP.
 
-Gets the display size in DP
+Gets the display size in DP.
 
 ### Example
 ```python
@@ -569,7 +617,7 @@ from pprint import pprint
 api_instance = culebratester_client.DefaultApi()
 
 try:
-    # Gets the display size in DP
+    # Gets the display size in DP.
     api_response = api_instance.ui_device_display_size_dp_get()
     pprint(api_response)
 except ApiException as e:
@@ -597,9 +645,9 @@ No authorization required
 # **ui_device_display_width_get**
 > DisplayWidth ui_device_display_width_get()
 
-Gets the display width
+Gets the display width.
 
-Gets the display width
+Gets the display width.
 
 ### Example
 ```python
@@ -613,7 +661,7 @@ from pprint import pprint
 api_instance = culebratester_client.DefaultApi()
 
 try:
-    # Gets the display width
+    # Gets the display width.
     api_response = api_instance.ui_device_display_width_get()
     pprint(api_response)
 except ApiException as e:
@@ -638,12 +686,68 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **ui_device_drag_get**
+> StatusResponse ui_device_drag_get(start_x, start_y, end_x, end_y, steps)
+
+Performs a swipe from one coordinate to another coordinate.
+
+Performs a swipe from one coordinate to another coordinate. You can control the smoothness and speed of the swipe by specifying the number of steps. Each step execution is throttled to 5 milliseconds per step, so for a 100 steps, the swipe will take around 0.5 seconds to complete.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import culebratester_client
+from culebratester_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = culebratester_client.DefaultApi()
+start_x = 56 # int | from x
+start_y = 56 # int | from y
+end_x = 56 # int | to x
+end_y = 56 # int | end y
+steps = 56 # int | is the number of move steps sent to the system
+
+try:
+    # Performs a swipe from one coordinate to another coordinate.
+    api_response = api_instance.ui_device_drag_get(start_x, start_y, end_x, end_y, steps)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling DefaultApi->ui_device_drag_get: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **start_x** | **int**| from x | 
+ **start_y** | **int**| from y | 
+ **end_x** | **int**| to x | 
+ **end_y** | **int**| end y | 
+ **steps** | **int**| is the number of move steps sent to the system | 
+
+### Return type
+
+[**StatusResponse**](StatusResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **ui_device_dump_window_hierarchy_get**
 > WindowHierarchy ui_device_dump_window_hierarchy_get(format=format)
 
-Dumps the window hierarchy
+Dumps the window hierarchy.
 
-Dumps the window hierarchy
+Dumps the window hierarchy.
 
 ### Example
 ```python
@@ -658,7 +762,7 @@ api_instance = culebratester_client.DefaultApi()
 format = 'format_example' # str | the output format (optional)
 
 try:
-    # Dumps the window hierarchy
+    # Dumps the window hierarchy.
     api_response = api_instance.ui_device_dump_window_hierarchy_get(format=format)
     pprint(api_response)
 except ApiException as e:
@@ -689,7 +793,7 @@ No authorization required
 # **ui_device_find_object_get**
 > ObjectRef ui_device_find_object_get(resource_id=resource_id, ui_selector=ui_selector, by_selector=by_selector)
 
-Finds an object
+Finds an object.
 
 Finds an object. The object found, if any, can be later used in other call like API.click.
 
@@ -708,7 +812,7 @@ ui_selector = 'ui_selector_example' # str | the selector sets the resource name 
 by_selector = 'by_selector_example' # str | the selector sets the resource name criteria for matching. A UI element will be considered a match if its resource name exactly matches the selector parameter and all other criteria for this selector are met. The format of the selector string is `sel@[$]value,...` Where `sel` can be one of - checkable - clazz - clickable - depth - desc - package - res - scrollable - text `@` replaces the `=` sign that is used to separate parameters and values in the URL. If the first character of value is `$` then a `Pattern` is created. (optional)
 
 try:
-    # Finds an object
+    # Finds an object.
     api_response = api_instance.ui_device_find_object_get(resource_id=resource_id, ui_selector=ui_selector, by_selector=by_selector)
     pprint(api_response)
 except ApiException as e:
@@ -741,7 +845,7 @@ No authorization required
 # **ui_device_find_object_post**
 > ObjectRef ui_device_find_object_post(body)
 
-Finds an object
+Finds an object.
 
 Finds an object. The object found, if any, can be later used in other call like API.click.
 
@@ -758,7 +862,7 @@ api_instance = culebratester_client.DefaultApi()
 body = culebratester_client.Selector() # Selector | Selector
 
 try:
-    # Finds an object
+    # Finds an object.
     api_response = api_instance.ui_device_find_object_post(body)
     pprint(api_response)
 except ApiException as e:
@@ -822,6 +926,98 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**list[ObjectRef]**](ObjectRef.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ui_device_freeze_rotation_get**
+> StatusResponse ui_device_freeze_rotation_get()
+
+Disables the sensors and freezes the device rotation at its current rotation state.
+
+Disables the sensors and freezes the device rotation at its current rotation state.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import culebratester_client
+from culebratester_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = culebratester_client.DefaultApi()
+
+try:
+    # Disables the sensors and freezes the device rotation at its current rotation state.
+    api_response = api_instance.ui_device_freeze_rotation_get()
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling DefaultApi->ui_device_freeze_rotation_get: %s\n" % e)
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**StatusResponse**](StatusResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ui_device_has_object_get**
+> StatusResponse ui_device_has_object_get(by_selector)
+
+Returns whether there is a match for the given selector criteria.
+
+Returns whether there is a match for the given selector criteria.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import culebratester_client
+from culebratester_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = culebratester_client.DefaultApi()
+by_selector = 'by_selector_example' # str | the selector sets the resource name criteria for matching. A UI element will be considered a match if its resource name exactly matches the selector parameter and all other criteria for this selector are met. The format of the selector string is `sel@[$]value,...` Where `sel` can be one of - checkable - clazz - clickable - depth - desc - package - res - scrollable - text `@` replaces the `=` sign that is used to separate parameters and values in the URL. If the first character of value is `$` then a `Pattern` is created.
+
+try:
+    # Returns whether there is a match for the given selector criteria.
+    api_response = api_instance.ui_device_has_object_get(by_selector)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling DefaultApi->ui_device_has_object_get: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **by_selector** | **str**| the selector sets the resource name criteria for matching. A UI element will be considered a match if its resource name exactly matches the selector parameter and all other criteria for this selector are met. The format of the selector string is &#x60;sel@[$]value,...&#x60; Where &#x60;sel&#x60; can be one of - checkable - clazz - clickable - depth - desc - package - res - scrollable - text &#x60;@&#x60; replaces the &#x60;&#x3D;&#x60; sign that is used to separate parameters and values in the URL. If the first character of value is &#x60;$&#x60; then a &#x60;Pattern&#x60; is created. | 
+
+### Return type
+
+[**StatusResponse**](StatusResponse.md)
 
 ### Authorization
 
@@ -1195,7 +1391,7 @@ No authorization required
 # **ui_device_screenshot_get**
 > str ui_device_screenshot_get(scale=scale, quality=quality)
 
-Gets the device screenshot
+Gets the device screenshot.
 
 Gets the device screenshot and can be influenced by the parameters. For example the `scale` of the screenshot or its `quality` can be specified. **NOTE**: [`UiDevice.takeScreenshot()`](https://developer.android.com/reference/android/support/test/uiautomator/UiDevice.html#takeScreenshot(java.io.File,%20float,%20int)) usually ignores these parameters so expect no change. 
 
@@ -1213,7 +1409,7 @@ scale = 3.4 # float | The scale of the screenshot (i.e. 0.5) (optional)
 quality = 56 # int | The quality of the screenshot (i.e. 100) (optional)
 
 try:
-    # Gets the device screenshot
+    # Gets the device screenshot.
     api_response = api_instance.ui_device_screenshot_get(scale=scale, quality=quality)
     pprint(api_response)
 except ApiException as e:
@@ -1303,7 +1499,7 @@ No authorization required
 
 Performs a swipe between points in the Point array.
 
-Each step execution is throttled to 5ms per step. So for a 100 steps, the swipe will take about 1/2 second to complete
+Each step execution is throttled to 5ms per step. So for a 100 steps, the swipe will take about 1/2 second to complete.
 
 ### Example
 ```python
@@ -1412,7 +1608,7 @@ from pprint import pprint
 # create an instance of the API class
 api_instance = culebratester_client.DefaultApi()
 timeout = 789 # int | in milliseconds
-package_name = 'package_name_example' # str | the specified window package name (can be null or not present). If null, a window update from any front-end window will end the wait (optional)
+package_name = 'package_name_example' # str | the specified window package name (can be null or not present). If null, a window update from any front-end window will end the wait. (optional)
 
 try:
     # Waits for a window content update event to occur.
@@ -1427,7 +1623,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **timeout** | **int**| in milliseconds | 
- **package_name** | **str**| the specified window package name (can be null or not present). If null, a window update from any front-end window will end the wait | [optional] 
+ **package_name** | **str**| the specified window package name (can be null or not present). If null, a window update from any front-end window will end the wait. | [optional] 
 
 ### Return type
 
