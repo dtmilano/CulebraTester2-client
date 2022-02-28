@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**culebra_help_api_get**](DefaultApi.md#culebra_help_api_get) | **GET** /culebra/help/{api} | Gets help
 [**culebra_info_get**](DefaultApi.md#culebra_info_get) | **GET** /culebra/info | Gets information about this app.
 [**device_display_real_size_get**](DefaultApi.md#device_display_real_size_get) | **GET** /device/displayRealSize | Gets display real size.
+[**device_wait_for_new_toast_get**](DefaultApi.md#device_wait_for_new_toast_get) | **GET** /device/waitForNewToast | Waits for a new Toast.
 [**object_store_clear_get**](DefaultApi.md#object_store_clear_get) | **GET** /objectStore/clear | Clears all the objects in store.
 [**object_store_list_get**](DefaultApi.md#object_store_list_get) | **GET** /objectStore/list | Lists the objects in store.
 [**object_store_remove_get**](DefaultApi.md#object_store_remove_get) | **GET** /objectStore/remove | Removes an object.
@@ -174,6 +175,54 @@ This endpoint does not need any parameter.
 ### Return type
 
 [**DisplayRealSize**](DisplayRealSize.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **device_wait_for_new_toast_get**
+> Text device_wait_for_new_toast_get(timeout=timeout)
+
+Waits for a new Toast.
+
+Waits for a new Toast until timeout.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import culebratester_client
+from culebratester_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = culebratester_client.DefaultApi()
+timeout = 789 # int | The timeout in ms (optional)
+
+try:
+    # Waits for a new Toast.
+    api_response = api_instance.device_wait_for_new_toast_get(timeout=timeout)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling DefaultApi->device_wait_for_new_toast_get: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **timeout** | **int**| The timeout in ms | [optional] 
+
+### Return type
+
+[**Text**](Text.md)
 
 ### Authorization
 
