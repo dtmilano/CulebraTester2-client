@@ -4,6 +4,8 @@ All URIs are relative to *http://localhost:9987/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**configurator_get_wait_for_idle_timeout_get**](DefaultApi.md#configurator_get_wait_for_idle_timeout_get) | **GET** /configurator/getWaitForIdleTimeout | Gets the current timeout used for waiting for the user interface to go into an idle state.
+[**configurator_set_wait_for_idle_timeout_get**](DefaultApi.md#configurator_set_wait_for_idle_timeout_get) | **GET** /configurator/setWaitForIdleTimeout | Sets the timeout for waiting for the user interface to go into an idle state before starting a uiautomator action.
 [**culebra_help_api_get**](DefaultApi.md#culebra_help_api_get) | **GET** /culebra/help/{api} | Gets help
 [**culebra_info_get**](DefaultApi.md#culebra_info_get) | **GET** /culebra/info | Gets information about this app.
 [**device_display_real_size_get**](DefaultApi.md#device_display_real_size_get) | **GET** /device/displayRealSize | Gets display real size.
@@ -50,6 +52,98 @@ Method | HTTP request | Description
 [**ui_object2_oid_set_text_post**](DefaultApi.md#ui_object2_oid_set_text_post) | **POST** /uiObject2/{oid}/setText | Sets the text content if this object is an editable field.
 [**until_find_object_get**](DefaultApi.md#until_find_object_get) | **GET** /until/findObject | Returns a SearchCondition that is satisfied when at least one element matching the selector can be found.
 [**until_new_window_get**](DefaultApi.md#until_new_window_get) | **GET** /until/newWindow | Returns a condition that depends on a new window having appeared.
+
+# **configurator_get_wait_for_idle_timeout_get**
+> Timeout configurator_get_wait_for_idle_timeout_get()
+
+Gets the current timeout used for waiting for the user interface to go into an idle state.
+
+Gets the current timeout used for waiting for the user interface to go into an idle state. By default, all core uiautomator objects except `UiDevice` will perform this wait before starting to search for the widget specified by the object's `UiSelector`. Once the idle state is detected or the timeout elapses (whichever occurs firs), the object will start to wait for the selector to find match. See `setWaitForSelectorTimeout(long)`
+
+### Example
+```python
+from __future__ import print_function
+import time
+import culebratester_client
+from culebratester_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = culebratester_client.DefaultApi()
+
+try:
+    # Gets the current timeout used for waiting for the user interface to go into an idle state.
+    api_response = api_instance.configurator_get_wait_for_idle_timeout_get()
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling DefaultApi->configurator_get_wait_for_idle_timeout_get: %s\n" % e)
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**Timeout**](Timeout.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **configurator_set_wait_for_idle_timeout_get**
+> StatusResponse configurator_set_wait_for_idle_timeout_get(timeout)
+
+Sets the timeout for waiting for the user interface to go into an idle state before starting a uiautomator action.
+
+Sets the timeout for waiting for the user interface to go into an idle state before starting a uiautomator action. By default, all core uiautomator objects except `UiDevice` will perform this wait before starting to search for the widget specified by the object's `UiSelector`. Once the idle state is detected or the timeout elapses (whichever occurs first), the object will start to wait for the selector to find a match. See `setWaitForSelectorTimeout(long)`
+
+### Example
+```python
+from __future__ import print_function
+import time
+import culebratester_client
+from culebratester_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = culebratester_client.DefaultApi()
+timeout = 789 # int | Timeout value in milliseconds
+
+try:
+    # Sets the timeout for waiting for the user interface to go into an idle state before starting a uiautomator action.
+    api_response = api_instance.configurator_set_wait_for_idle_timeout_get(timeout)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling DefaultApi->configurator_set_wait_for_idle_timeout_get: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **timeout** | **int**| Timeout value in milliseconds | 
+
+### Return type
+
+[**StatusResponse**](StatusResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **culebra_help_api_get**
 > Help culebra_help_api_get(api)

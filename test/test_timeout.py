@@ -15,12 +15,12 @@ from __future__ import absolute_import
 import unittest
 
 import culebratester_client
-from culebratester_client.models.display_rotation_enum import DisplayRotationEnum  # noqa: E501
+from culebratester_client.models.timeout import Timeout  # noqa: E501
 from culebratester_client.rest import ApiException
 
 
-class TestDisplayRotationEnum(unittest.TestCase):
-    """DisplayRotationEnum unit test stubs"""
+class TestTimeout(unittest.TestCase):
+    """Timeout unit test stubs"""
 
     def setUp(self):
         pass
@@ -28,10 +28,10 @@ class TestDisplayRotationEnum(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testDisplayRotationEnum(self):
-        """Test DisplayRotationEnum"""
+    def testTimeout(self):
+        """Test Timeout"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = culebratester_client.models.display_rotation_enum.DisplayRotationEnum()  # noqa: E501
+        # model = culebratester_client.models.timeout.Timeout()  # noqa: E501
         pass
 
 
