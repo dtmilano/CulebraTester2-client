@@ -29,6 +29,7 @@ Method | HTTP request | Description
 [**ui_device_freeze_rotation_get**](DefaultApi.md#ui_device_freeze_rotation_get) | **GET** /uiDevice/freezeRotation | Disables the sensors and freezes the device rotation at its current rotation state.
 [**ui_device_has_object_get**](DefaultApi.md#ui_device_has_object_get) | **GET** /uiDevice/hasObject | Returns whether there is a match for the given selector criteria.
 [**ui_device_last_traversed_text_get**](DefaultApi.md#ui_device_last_traversed_text_get) | **GET** /uiDevice/lastTraversedText | Retrieves the text from the last UI traversal event received.
+[**ui_device_pixel_get**](DefaultApi.md#ui_device_pixel_get) | **GET** /uiDevice/pixel | Gets a pixel from device screen.
 [**ui_device_press_back_get**](DefaultApi.md#ui_device_press_back_get) | **GET** /uiDevice/pressBack | Simulates a short press on the BACK button.
 [**ui_device_press_delete_get**](DefaultApi.md#ui_device_press_delete_get) | **GET** /uiDevice/pressDelete | Simulates a short press on the DELETE key.
 [**ui_device_press_enter_get**](DefaultApi.md#ui_device_press_enter_get) | **GET** /uiDevice/pressEnter | Simulates a short press on the ENTER key.
@@ -1205,6 +1206,56 @@ This endpoint does not need any parameter.
 ### Return type
 
 [**LastTraversedText**](LastTraversedText.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ui_device_pixel_get**
+> Pixel ui_device_pixel_get(x, y)
+
+Gets a pixel from device screen.
+
+Gets a pixel on the device screen screenshot. 
+
+### Example
+```python
+from __future__ import print_function
+import time
+import culebratester_client
+from culebratester_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = culebratester_client.DefaultApi()
+x = 56 # int | The x coordinate
+y = 56 # int | The y coordinate
+
+try:
+    # Gets a pixel from device screen.
+    api_response = api_instance.ui_device_pixel_get(x, y)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling DefaultApi->ui_device_pixel_get: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **x** | **int**| The x coordinate | 
+ **y** | **int**| The y coordinate | 
+
+### Return type
+
+[**Pixel**](Pixel.md)
 
 ### Authorization
 
