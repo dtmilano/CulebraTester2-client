@@ -16,6 +16,7 @@ Method | HTTP request | Description
 [**target_context_start_activity_get**](DefaultApi.md#target_context_start_activity_get) | **GET** /targetContext/startActivity | Starts an Activity.
 [**ui_device_clear_last_traversed_text_get**](DefaultApi.md#ui_device_clear_last_traversed_text_get) | **GET** /uiDevice/clearLastTraversedText | Clears the text from the last UI traversal event.
 [**ui_device_click_get**](DefaultApi.md#ui_device_click_get) | **GET** /uiDevice/click | Clicks at the specified location.
+[**ui_device_click_post**](DefaultApi.md#ui_device_click_post) | **POST** /uiDevice/click | Clicks at the specified locations.
 [**ui_device_current_package_name_get**](DefaultApi.md#ui_device_current_package_name_get) | **GET** /uiDevice/currentPackageName | Gets the current package name.
 [**ui_device_display_height_get**](DefaultApi.md#ui_device_display_height_get) | **GET** /uiDevice/displayHeight | Gets the display height.
 [**ui_device_display_rotation_get**](DefaultApi.md#ui_device_display_rotation_get) | **GET** /uiDevice/displayRotation | Gets the display rotation.
@@ -607,6 +608,54 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json, text/plain
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ui_device_click_post**
+> StatusResponse ui_device_click_post(body)
+
+Clicks at the specified locations.
+
+Clicks at the specified locations.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import culebratester_client
+from culebratester_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = culebratester_client.DefaultApi()
+body = culebratester_client.ClickBody() # ClickBody | 
+
+try:
+    # Clicks at the specified locations.
+    api_response = api_instance.ui_device_click_post(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling DefaultApi->ui_device_click_post: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**ClickBody**](ClickBody.md)|  | 
+
+### Return type
+
+[**StatusResponse**](StatusResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

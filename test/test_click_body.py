@@ -15,12 +15,12 @@ from __future__ import absolute_import
 import unittest
 
 import culebratester_client
-from culebratester_client.models.display_rotation import DisplayRotation  # noqa: E501
+from culebratester_client.models.click_body import ClickBody  # noqa: E501
 from culebratester_client.rest import ApiException
 
 
-class TestDisplayRotation(unittest.TestCase):
-    """DisplayRotation unit test stubs"""
+class TestClickBody(unittest.TestCase):
+    """ClickBody unit test stubs"""
 
     def setUp(self):
         pass
@@ -28,10 +28,10 @@ class TestDisplayRotation(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testDisplayRotation(self):
-        """Test DisplayRotation"""
+    def testClickBody(self):
+        """Test ClickBody"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = culebratester_client.models.display_rotation.DisplayRotation()  # noqa: E501
+        # model = culebratester_client.models.click_body.ClickBody()  # noqa: E501
         pass
 
 
