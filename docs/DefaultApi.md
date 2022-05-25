@@ -486,7 +486,7 @@ from pprint import pprint
 api_instance = culebratester_client.DefaultApi()
 pkg = 'pkg_example' # str | the package name
 cls = 'cls_example' # str | the class name
-uri = 'uri_example' # str | the URI (optional)
+uri = 'uri_example' # str | the URI (i. e. https://example.com) (optional)
 
 try:
     # Starts an Activity.
@@ -502,7 +502,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **pkg** | **str**| the package name | 
  **cls** | **str**| the class name | 
- **uri** | **str**| the URI | [optional] 
+ **uri** | **str**| the URI (i. e. https://example.com) | [optional] 
 
 ### Return type
 
