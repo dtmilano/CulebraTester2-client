@@ -468,7 +468,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **target_context_start_activity_get**
-> StatusResponse target_context_start_activity_get(pkg, cls)
+> StatusResponse target_context_start_activity_get(pkg, cls, uri=uri)
 
 Starts an Activity.
 
@@ -486,10 +486,11 @@ from pprint import pprint
 api_instance = culebratester_client.DefaultApi()
 pkg = 'pkg_example' # str | the package name
 cls = 'cls_example' # str | the class name
+uri = 'uri_example' # str | the URI (optional)
 
 try:
     # Starts an Activity.
-    api_response = api_instance.target_context_start_activity_get(pkg, cls)
+    api_response = api_instance.target_context_start_activity_get(pkg, cls, uri=uri)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling DefaultApi->target_context_start_activity_get: %s\n" % e)
@@ -501,6 +502,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **pkg** | **str**| the package name | 
  **cls** | **str**| the class name | 
+ **uri** | **str**| the URI | [optional] 
 
 ### Return type
 
