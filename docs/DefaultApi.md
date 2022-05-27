@@ -29,6 +29,8 @@ Method | HTTP request | Description
 [**ui_device_find_objects_get**](DefaultApi.md#ui_device_find_objects_get) | **GET** /uiDevice/findObjects | Finds *all* objects that match the selector criteria.
 [**ui_device_freeze_rotation_get**](DefaultApi.md#ui_device_freeze_rotation_get) | **GET** /uiDevice/freezeRotation | Disables the sensors and freezes the device rotation at its current rotation state.
 [**ui_device_has_object_get**](DefaultApi.md#ui_device_has_object_get) | **GET** /uiDevice/hasObject | Returns whether there is a match for the given selector criteria.
+[**ui_device_is_natural_orientation_get**](DefaultApi.md#ui_device_is_natural_orientation_get) | **GET** /uiDevice/isNaturalOrientation | Check if the device is in its natural orientation.
+[**ui_device_is_screen_on_get**](DefaultApi.md#ui_device_is_screen_on_get) | **GET** /uiDevice/isScreenOn | Checks the power manager if the screen is ON.
 [**ui_device_last_traversed_text_get**](DefaultApi.md#ui_device_last_traversed_text_get) | **GET** /uiDevice/lastTraversedText | Retrieves the text from the last UI traversal event received.
 [**ui_device_pixel_get**](DefaultApi.md#ui_device_pixel_get) | **GET** /uiDevice/pixel | Gets a pixel from device screen.
 [**ui_device_press_back_get**](DefaultApi.md#ui_device_press_back_get) | **GET** /uiDevice/pressBack | Simulates a short press on the BACK button.
@@ -41,6 +43,7 @@ Method | HTTP request | Description
 [**ui_device_screenshot_get**](DefaultApi.md#ui_device_screenshot_get) | **GET** /uiDevice/screenshot | Gets the device screenshot.
 [**ui_device_swipe_get**](DefaultApi.md#ui_device_swipe_get) | **GET** /uiDevice/swipe | Performs a swipe.
 [**ui_device_swipe_post**](DefaultApi.md#ui_device_swipe_post) | **POST** /uiDevice/swipe | Performs a swipe between points in the Point array.
+[**ui_device_unfreeze_rotation_get**](DefaultApi.md#ui_device_unfreeze_rotation_get) | **GET** /uiDevice/unfreezeRotation | Re-enables the sensors and un-freezes the device rotation allowing its contents to rotate with the device physical rotation
 [**ui_device_wait_for_idle_get**](DefaultApi.md#ui_device_wait_for_idle_get) | **GET** /uiDevice/waitForIdle | Waits for the current application to idle.
 [**ui_device_wait_for_window_update_get**](DefaultApi.md#ui_device_wait_for_window_update_get) | **GET** /uiDevice/waitForWindowUpdate | Waits for a window content update event to occur.
 [**ui_device_wait_get**](DefaultApi.md#ui_device_wait_get) | **GET** /uiDevice/wait | Waits for given the condition to be met.
@@ -750,7 +753,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **ui_device_display_rotation_get**
-> DisplayRotation ui_device_display_rotation_get()
+> DisplayRotationResponse ui_device_display_rotation_get()
 
 Gets the display rotation.
 
@@ -780,7 +783,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**DisplayRotation**](DisplayRotation.md)
+[**DisplayRotationResponse**](DisplayRotationResponse.md)
 
 ### Authorization
 
@@ -1213,6 +1216,94 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**StatusResponse**](StatusResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ui_device_is_natural_orientation_get**
+> BooleanResponse ui_device_is_natural_orientation_get()
+
+Check if the device is in its natural orientation.
+
+This is determined by checking if the orientation is at 0 or 180 degrees.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import culebratester_client
+from culebratester_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = culebratester_client.DefaultApi()
+
+try:
+    # Check if the device is in its natural orientation.
+    api_response = api_instance.ui_device_is_natural_orientation_get()
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling DefaultApi->ui_device_is_natural_orientation_get: %s\n" % e)
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**BooleanResponse**](BooleanResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ui_device_is_screen_on_get**
+> BooleanResponse ui_device_is_screen_on_get()
+
+Checks the power manager if the screen is ON.
+
+Checks the power manager if the screen is ON.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import culebratester_client
+from culebratester_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = culebratester_client.DefaultApi()
+
+try:
+    # Checks the power manager if the screen is ON.
+    api_response = api_instance.ui_device_is_screen_on_get()
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling DefaultApi->ui_device_is_screen_on_get: %s\n" % e)
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**BooleanResponse**](BooleanResponse.md)
 
 ### Authorization
 
@@ -1783,6 +1874,50 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ui_device_unfreeze_rotation_get**
+> StatusResponse ui_device_unfreeze_rotation_get()
+
+Re-enables the sensors and un-freezes the device rotation allowing its contents to rotate with the device physical rotation
+
+During a test execution, it is best to keep the device frozen in a specific orientation until the test case execution has completed.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import culebratester_client
+from culebratester_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = culebratester_client.DefaultApi()
+
+try:
+    # Re-enables the sensors and un-freezes the device rotation allowing its contents to rotate with the device physical rotation
+    api_response = api_instance.ui_device_unfreeze_rotation_get()
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling DefaultApi->ui_device_unfreeze_rotation_get: %s\n" % e)
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**StatusResponse**](StatusResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

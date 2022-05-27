@@ -15,12 +15,12 @@ from __future__ import absolute_import
 import unittest
 
 import culebratester_client
-from culebratester_client.models.last_traversed_text import LastTraversedText  # noqa: E501
+from culebratester_client.models.boolean_response import BooleanResponse  # noqa: E501
 from culebratester_client.rest import ApiException
 
 
-class TestLastTraversedText(unittest.TestCase):
-    """LastTraversedText unit test stubs"""
+class TestBooleanResponse(unittest.TestCase):
+    """BooleanResponse unit test stubs"""
 
     def setUp(self):
         pass
@@ -28,10 +28,10 @@ class TestLastTraversedText(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testLastTraversedText(self):
-        """Test LastTraversedText"""
+    def testBooleanResponse(self):
+        """Test BooleanResponse"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = culebratester_client.models.last_traversed_text.LastTraversedText()  # noqa: E501
+        # model = culebratester_client.models.boolean_response.BooleanResponse()  # noqa: E501
         pass
 
 
