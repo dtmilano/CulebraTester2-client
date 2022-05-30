@@ -14,6 +14,12 @@ Python 2.7 and 3.4+
 ## Installation & Usage
 ### pip install
 
+Just run
+
+```sh
+pip install culebratester_client --upgrade
+```
+
 If the python package is hosted on Github, you can install directly from Github
 
 ```sh
