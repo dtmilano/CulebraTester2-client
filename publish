@@ -3,7 +3,7 @@
 set -e
 dry_run=
 
-./patch_readme
+./patch-readme
 if ! git diff-index --quiet HEAD --
 then
     printf '⚠️  WARNING: There are uncommitted changes. Commit or restore before proceeding with publish\n' >&2
