@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**culebra_help_api_get**](DefaultApi.md#culebra_help_api_get) | **GET** /culebra/help/{api} | Gets help
 [**culebra_info_get**](DefaultApi.md#culebra_info_get) | **GET** /culebra/info | Gets information about this app.
 [**device_display_real_size_get**](DefaultApi.md#device_display_real_size_get) | **GET** /device/displayRealSize | Gets display real size.
+[**device_dumpsys_get**](DefaultApi.md#device_dumpsys_get) | **GET** /device/dumpsys | 
 [**device_wait_for_new_toast_get**](DefaultApi.md#device_wait_for_new_toast_get) | **GET** /device/waitForNewToast | Waits for a new Toast.
 [**object_store_clear_get**](DefaultApi.md#object_store_clear_get) | **GET** /objectStore/clear | Clears all the objects in store.
 [**object_store_list_get**](DefaultApi.md#object_store_list_get) | **GET** /objectStore/list | Lists the objects in store.
@@ -283,6 +284,52 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **device_dumpsys_get**
+> device_dumpsys_get(service)
+
+
+
+dumpsys is a tool that runs on Android devices and provides information about system services. You can call dumpsys from the command line using the Android Debug Bridge (ADB) to get diagnostic output for all system services running on a connected device.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import culebratester_client
+from culebratester_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = culebratester_client.DefaultApi()
+service = NULL # object | dumps only service SERVICE
+
+try:
+    api_instance.device_dumpsys_get(service)
+except ApiException as e:
+    print("Exception when calling DefaultApi->device_dumpsys_get: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **service** | [**object**](.md)| dumps only service SERVICE | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
