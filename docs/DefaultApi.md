@@ -288,7 +288,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **device_dumpsys_get**
-> device_dumpsys_get(service)
+> device_dumpsys_get(service, arg1=arg1, arg2=arg2, arg3=arg3)
 
 
 
@@ -305,9 +305,12 @@ from pprint import pprint
 # create an instance of the API class
 api_instance = culebratester_client.DefaultApi()
 service = NULL # object | dumps only service SERVICE
+arg1 = NULL # object | argument 1 for dumpsys service command (optional)
+arg2 = NULL # object | argument 2 for dumpsys service command (optional)
+arg3 = NULL # object | argument 3 for dumpsys service command (optional)
 
 try:
-    api_instance.device_dumpsys_get(service)
+    api_instance.device_dumpsys_get(service, arg1=arg1, arg2=arg2, arg3=arg3)
 except ApiException as e:
     print("Exception when calling DefaultApi->device_dumpsys_get: %s\n" % e)
 ```
@@ -317,6 +320,9 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **service** | [**object**](.md)| dumps only service SERVICE | 
+ **arg1** | [**object**](.md)| argument 1 for dumpsys service command | [optional] 
+ **arg2** | [**object**](.md)| argument 2 for dumpsys service command | [optional] 
+ **arg3** | [**object**](.md)| argument 3 for dumpsys service command | [optional] 
 
 ### Return type
 
