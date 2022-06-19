@@ -15,12 +15,12 @@ from __future__ import absolute_import
 import unittest
 
 import culebratester_client
-from culebratester_client.models.status_response import StatusResponse  # noqa: E501
+from culebratester_client.models.pattern import Pattern  # noqa: E501
 from culebratester_client.rest import ApiException
 
 
-class TestStatusResponse(unittest.TestCase):
-    """StatusResponse unit test stubs"""
+class TestPattern(unittest.TestCase):
+    """Pattern unit test stubs"""
 
     def setUp(self):
         pass
@@ -28,10 +28,10 @@ class TestStatusResponse(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testStatusResponse(self):
-        """Test StatusResponse"""
+    def testPattern(self):
+        """Test Pattern"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = culebratester_client.models.status_response.StatusResponse()  # noqa: E501
+        # model = culebratester_client.models.pattern.Pattern()  # noqa: E501
         pass
 
 
