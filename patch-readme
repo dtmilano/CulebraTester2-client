@@ -1,6 +1,9 @@
 #! /bin/bash
 
-patch -p1 -N -r /tmp/ignore 2>&1 <<'EOF'
+temp=$(mktemp)
+trap 'rm -f "$temp"' EXIT
+
+patch -p1 -N -r /tmp/ignore 2>&1 >"$temp" <<'EOF'
 diff --git a/README.md b/README.md
 index de24b35..265e6e2 100644
 --- a/README.md
@@ -19,3 +22,11 @@ index de24b35..265e6e2 100644
  
  ```sh
 EOF
+
+if [[ -s "$temp" ]]
+then
+    if grep -q 'Reversed (or previously applied) patch detected!' "$temp"
+    then
+        exit 0
+    fi
+fi

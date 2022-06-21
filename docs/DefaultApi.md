@@ -52,6 +52,7 @@ Method | HTTP request | Description
 [**ui_object2_oid_click_and_wait_get**](DefaultApi.md#ui_object2_oid_click_and_wait_get) | **GET** /uiObject2/{oid}/clickAndWait | Clicks on the specified object.
 [**ui_object2_oid_click_get**](DefaultApi.md#ui_object2_oid_click_get) | **GET** /uiObject2/{oid}/click | Clicks on the specified object.
 [**ui_object2_oid_dump_get**](DefaultApi.md#ui_object2_oid_dump_get) | **GET** /uiObject2/{oid}/dump | Dumps the specified object.
+[**ui_object2_oid_get_content_description_get**](DefaultApi.md#ui_object2_oid_get_content_description_get) | **GET** /uiObject2/{oid}/getContentDescription | Returns the content description for this object.
 [**ui_object2_oid_get_text_get**](DefaultApi.md#ui_object2_oid_get_text_get) | **GET** /uiObject2/{oid}/getText | Gets the text content.
 [**ui_object2_oid_long_click_get**](DefaultApi.md#ui_object2_oid_long_click_get) | **GET** /uiObject2/{oid}/longClick | Long-clicks on the specified object.
 [**ui_object2_oid_set_text_get**](DefaultApi.md#ui_object2_oid_set_text_get) | **GET** /uiObject2/{oid}/setText | Sets the text content if this object is an editable field.
@@ -2307,6 +2308,54 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Selector**](Selector.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ui_object2_oid_get_content_description_get**
+> Text ui_object2_oid_get_content_description_get(oid)
+
+Returns the content description for this object.
+
+The target object should have been found using `findObject` with a `selector`.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import culebratester_client
+from culebratester_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = culebratester_client.DefaultApi()
+oid = 56 # int | The object ID
+
+try:
+    # Returns the content description for this object.
+    api_response = api_instance.ui_object2_oid_get_content_description_get(oid)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling DefaultApi->ui_object2_oid_get_content_description_get: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **oid** | **int**| The object ID | 
+
+### Return type
+
+[**Text**](Text.md)
 
 ### Authorization
 
