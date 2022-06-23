@@ -28,6 +28,7 @@ Method | HTTP request | Description
 [**ui_device_find_object_get**](DefaultApi.md#ui_device_find_object_get) | **GET** /uiDevice/findObject | Finds an object.
 [**ui_device_find_object_post**](DefaultApi.md#ui_device_find_object_post) | **POST** /uiDevice/findObject | Finds an object.
 [**ui_device_find_objects_get**](DefaultApi.md#ui_device_find_objects_get) | **GET** /uiDevice/findObjects | Finds *all* objects that match the selector criteria.
+[**ui_device_find_objects_post**](DefaultApi.md#ui_device_find_objects_post) | **POST** /uiDevice/findObjects | Finds *all* objects.
 [**ui_device_freeze_rotation_get**](DefaultApi.md#ui_device_freeze_rotation_get) | **GET** /uiDevice/freezeRotation | Disables the sensors and freezes the device rotation at its current rotation state.
 [**ui_device_has_object_get**](DefaultApi.md#ui_device_has_object_get) | **GET** /uiDevice/hasObject | Returns whether there is a match for the given selector criteria.
 [**ui_device_is_natural_orientation_get**](DefaultApi.md#ui_device_is_natural_orientation_get) | **GET** /uiDevice/isNaturalOrientation | Check if the device is in its natural orientation.
@@ -1186,6 +1187,54 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ui_device_find_objects_post**
+> list[ObjectRef] ui_device_find_objects_post(body)
+
+Finds *all* objects.
+
+Finds all objects. The objects found, if any, can be later used in other call like API.click.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import culebratester_client
+from culebratester_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = culebratester_client.DefaultApi()
+body = culebratester_client.Selector() # Selector | Selector
+
+try:
+    # Finds *all* objects.
+    api_response = api_instance.ui_device_find_objects_post(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling DefaultApi->ui_device_find_objects_post: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**Selector**](Selector.md)| Selector | 
+
+### Return type
+
+[**list[ObjectRef]**](ObjectRef.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
