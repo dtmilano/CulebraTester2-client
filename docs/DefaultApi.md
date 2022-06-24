@@ -59,6 +59,7 @@ Method | HTTP request | Description
 [**ui_object2_oid_set_text_get**](DefaultApi.md#ui_object2_oid_set_text_get) | **GET** /uiObject2/{oid}/setText | Sets the text content if this object is an editable field.
 [**ui_object2_oid_set_text_post**](DefaultApi.md#ui_object2_oid_set_text_post) | **POST** /uiObject2/{oid}/setText | Sets the text content if this object is an editable field.
 [**until_find_object_get**](DefaultApi.md#until_find_object_get) | **GET** /until/findObject | Returns a SearchCondition that is satisfied when at least one element matching the selector can be found.
+[**until_find_object_post**](DefaultApi.md#until_find_object_post) | **POST** /until/findObject | Returns a SearchCondition that is satisfied when at least one element matching the selector can be found.
 [**until_new_window_get**](DefaultApi.md#until_new_window_get) | **GET** /until/newWindow | Returns a condition that depends on a new window having appeared.
 
 # **configurator_get_wait_for_idle_timeout_get**
@@ -2124,7 +2125,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **ui_device_wait_get**
-> ObjectRef ui_device_wait_get(search_condition_ref, timeout=timeout)
+> ObjectRef ui_device_wait_get(oid, timeout=timeout)
 
 Waits for given the condition to be met.
 
@@ -2140,12 +2141,12 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = culebratester_client.DefaultApi()
-search_condition_ref = 789 # int | The search condition
+oid = 789 # int | The search condition object ID
 timeout = 789 # int | The timeout in ms (optional)
 
 try:
     # Waits for given the condition to be met.
-    api_response = api_instance.ui_device_wait_get(search_condition_ref, timeout=timeout)
+    api_response = api_instance.ui_device_wait_get(oid, timeout=timeout)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling DefaultApi->ui_device_wait_get: %s\n" % e)
@@ -2155,7 +2156,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **search_condition_ref** | **int**| The search condition | 
+ **oid** | **int**| The search condition object ID | 
  **timeout** | **int**| The timeout in ms | [optional] 
 
 ### Return type
@@ -2657,6 +2658,54 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **until_find_object_post**
+> ObjectRef until_find_object_post(body)
+
+Returns a SearchCondition that is satisfied when at least one element matching the selector can be found.
+
+The condition will return the first matching element.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import culebratester_client
+from culebratester_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = culebratester_client.DefaultApi()
+body = culebratester_client.Selector() # Selector | Selector
+
+try:
+    # Returns a SearchCondition that is satisfied when at least one element matching the selector can be found.
+    api_response = api_instance.until_find_object_post(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling DefaultApi->until_find_object_post: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**Selector**](Selector.md)| Selector | 
+
+### Return type
+
+[**ObjectRef**](ObjectRef.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
