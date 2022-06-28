@@ -60,6 +60,8 @@ Method | HTTP request | Description
 [**ui_object2_oid_set_text_post**](DefaultApi.md#ui_object2_oid_set_text_post) | **POST** /uiObject2/{oid}/setText | Sets the text content if this object is an editable field.
 [**until_find_object_get**](DefaultApi.md#until_find_object_get) | **GET** /until/findObject | Returns a SearchCondition that is satisfied when at least one element matching the selector can be found.
 [**until_find_object_post**](DefaultApi.md#until_find_object_post) | **POST** /until/findObject | Returns a SearchCondition that is satisfied when at least one element matching the selector can be found.
+[**until_find_objects_get**](DefaultApi.md#until_find_objects_get) | **GET** /until/findObjects | Returns a SearchCondition that is satisfied when at least one element matching the selector can be found.
+[**until_find_objects_post**](DefaultApi.md#until_find_objects_post) | **POST** /until/findObjects | Returns a SearchCondition that is satisfied when at least one element matching the selector can be found.
 [**until_new_window_get**](DefaultApi.md#until_new_window_get) | **GET** /until/newWindow | Returns a condition that depends on a new window having appeared.
 
 # **configurator_get_wait_for_idle_timeout_get**
@@ -2687,6 +2689,102 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling DefaultApi->until_find_object_post: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**Selector**](Selector.md)| Selector | 
+
+### Return type
+
+[**ObjectRef**](ObjectRef.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **until_find_objects_get**
+> ObjectRef until_find_objects_get(by_selector=by_selector)
+
+Returns a SearchCondition that is satisfied when at least one element matching the selector can be found.
+
+Finds an object. The object found, if any, can be later used in other call like API.click.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import culebratester_client
+from culebratester_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = culebratester_client.DefaultApi()
+by_selector = 'by_selector_example' # str | the selector sets the resource name criteria for matching. A UI element will be considered a match if its resource name exactly matches the selector parameter and all other criteria for this selector are met. The format of the selector string is `sel@[\\$]value,...` Where `sel` can be one of - checkable - clazz - clickable - depth - desc - package - res - scrollable - text `@` replaces the `=` sign that is used to separate parameters and values in the URL. If the first character of value is `$` then a `Pattern` is created. (optional)
+
+try:
+    # Returns a SearchCondition that is satisfied when at least one element matching the selector can be found.
+    api_response = api_instance.until_find_objects_get(by_selector=by_selector)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling DefaultApi->until_find_objects_get: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **by_selector** | **str**| the selector sets the resource name criteria for matching. A UI element will be considered a match if its resource name exactly matches the selector parameter and all other criteria for this selector are met. The format of the selector string is &#x60;sel@[\\$]value,...&#x60; Where &#x60;sel&#x60; can be one of - checkable - clazz - clickable - depth - desc - package - res - scrollable - text &#x60;@&#x60; replaces the &#x60;&#x3D;&#x60; sign that is used to separate parameters and values in the URL. If the first character of value is &#x60;$&#x60; then a &#x60;Pattern&#x60; is created. | [optional] 
+
+### Return type
+
+[**ObjectRef**](ObjectRef.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **until_find_objects_post**
+> ObjectRef until_find_objects_post(body)
+
+Returns a SearchCondition that is satisfied when at least one element matching the selector can be found.
+
+Returns a SearchCondition that is satisfied when at least one element matching the selector can be found.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import culebratester_client
+from culebratester_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = culebratester_client.DefaultApi()
+body = culebratester_client.Selector() # Selector | Selector
+
+try:
+    # Returns a SearchCondition that is satisfied when at least one element matching the selector can be found.
+    api_response = api_instance.until_find_objects_post(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling DefaultApi->until_find_objects_post: %s\n" % e)
 ```
 
 ### Parameters
