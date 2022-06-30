@@ -2127,7 +2127,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **ui_device_wait_get**
-> ObjectRef ui_device_wait_get(oid, timeout=timeout)
+> AnyValue ui_device_wait_get(oid, timeout=timeout)
 
 Waits for given the condition to be met.
 
@@ -2163,7 +2163,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ObjectRef**](ObjectRef.md)
+[**AnyValue**](AnyValue.md)
 
 ### Authorization
 
