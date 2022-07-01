@@ -31,6 +31,7 @@ Method | HTTP request | Description
 [**ui_device_find_objects_post**](DefaultApi.md#ui_device_find_objects_post) | **POST** /uiDevice/findObjects | Finds *all* objects.
 [**ui_device_freeze_rotation_get**](DefaultApi.md#ui_device_freeze_rotation_get) | **GET** /uiDevice/freezeRotation | Disables the sensors and freezes the device rotation at its current rotation state.
 [**ui_device_has_object_get**](DefaultApi.md#ui_device_has_object_get) | **GET** /uiDevice/hasObject | Returns whether there is a match for the given selector criteria.
+[**ui_device_has_object_post**](DefaultApi.md#ui_device_has_object_post) | **POST** /uiDevice/hasObject | Returns whether there is a match for the given selector criteria.
 [**ui_device_is_natural_orientation_get**](DefaultApi.md#ui_device_is_natural_orientation_get) | **GET** /uiDevice/isNaturalOrientation | Check if the device is in its natural orientation.
 [**ui_device_is_screen_on_get**](DefaultApi.md#ui_device_is_screen_on_get) | **GET** /uiDevice/isScreenOn | Checks the power manager if the screen is ON.
 [**ui_device_last_traversed_text_get**](DefaultApi.md#ui_device_last_traversed_text_get) | **GET** /uiDevice/lastTraversedText | Retrieves the text from the last UI traversal event received.
@@ -1287,7 +1288,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **ui_device_has_object_get**
-> StatusResponse ui_device_has_object_get(by_selector)
+> BooleanResponse ui_device_has_object_get(by_selector)
 
 Returns whether there is a match for the given selector criteria.
 
@@ -1321,7 +1322,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**StatusResponse**](StatusResponse.md)
+[**BooleanResponse**](BooleanResponse.md)
 
 ### Authorization
 
@@ -1330,6 +1331,54 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ui_device_has_object_post**
+> BooleanResponse ui_device_has_object_post(body)
+
+Returns whether there is a match for the given selector criteria.
+
+Returns whether there is a match for the given selector criteria.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import culebratester_client
+from culebratester_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = culebratester_client.DefaultApi()
+body = culebratester_client.Selector() # Selector | Selector
+
+try:
+    # Returns whether there is a match for the given selector criteria.
+    api_response = api_instance.ui_device_has_object_post(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling DefaultApi->ui_device_has_object_post: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**Selector**](Selector.md)| Selector | 
+
+### Return type
+
+[**BooleanResponse**](BooleanResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
