@@ -54,6 +54,8 @@ Method | HTTP request | Description
 [**ui_object2_oid_click_and_wait_get**](DefaultApi.md#ui_object2_oid_click_and_wait_get) | **GET** /uiObject2/{oid}/clickAndWait | Clicks on the specified object.
 [**ui_object2_oid_click_get**](DefaultApi.md#ui_object2_oid_click_get) | **GET** /uiObject2/{oid}/click | Clicks on the specified object.
 [**ui_object2_oid_dump_get**](DefaultApi.md#ui_object2_oid_dump_get) | **GET** /uiObject2/{oid}/dump | Dumps the specified object.
+[**ui_object2_oid_find_object_get**](DefaultApi.md#ui_object2_oid_find_object_get) | **GET** /uiObject2/{oid}/findObject | Finds an object.
+[**ui_object2_oid_find_object_post**](DefaultApi.md#ui_object2_oid_find_object_post) | **POST** /uiObject2/{oid}/findObject | Finds an object.
 [**ui_object2_oid_get_content_description_get**](DefaultApi.md#ui_object2_oid_get_content_description_get) | **GET** /uiObject2/{oid}/getContentDescription | Returns the content description for this object.
 [**ui_object2_oid_get_text_get**](DefaultApi.md#ui_object2_oid_get_text_get) | **GET** /uiObject2/{oid}/getText | Gets the text content.
 [**ui_object2_oid_long_click_get**](DefaultApi.md#ui_object2_oid_long_click_get) | **GET** /uiObject2/{oid}/longClick | Long-clicks on the specified object.
@@ -2417,6 +2419,106 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ui_object2_oid_find_object_get**
+> ObjectRef ui_object2_oid_find_object_get(oid, by_selector=by_selector)
+
+Finds an object.
+
+Searches all elements under this object and returns the first object to match the criteria, or not found if no matching objects are found.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import culebratester_client
+from culebratester_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = culebratester_client.DefaultApi()
+oid = 56 # int | The object ID
+by_selector = 'by_selector_example' # str | the selector sets the resource name criteria for matching. A UI element will be considered a match if its resource name exactly matches the selector parameter and all other criteria for this selector are met. The format of the selector string is `sel@[\\$]value,...` Where `sel` can be one of - checkable - clazz - clickable - depth - desc - package - res - scrollable - text `@` replaces the `=` sign that is used to separate parameters and values in the URL. If the first character of value is `$` then a `Pattern` is created. (optional)
+
+try:
+    # Finds an object.
+    api_response = api_instance.ui_object2_oid_find_object_get(oid, by_selector=by_selector)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling DefaultApi->ui_object2_oid_find_object_get: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **oid** | **int**| The object ID | 
+ **by_selector** | **str**| the selector sets the resource name criteria for matching. A UI element will be considered a match if its resource name exactly matches the selector parameter and all other criteria for this selector are met. The format of the selector string is &#x60;sel@[\\$]value,...&#x60; Where &#x60;sel&#x60; can be one of - checkable - clazz - clickable - depth - desc - package - res - scrollable - text &#x60;@&#x60; replaces the &#x60;&#x3D;&#x60; sign that is used to separate parameters and values in the URL. If the first character of value is &#x60;$&#x60; then a &#x60;Pattern&#x60; is created. | [optional] 
+
+### Return type
+
+[**ObjectRef**](ObjectRef.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ui_object2_oid_find_object_post**
+> ObjectRef ui_object2_oid_find_object_post(body, oid)
+
+Finds an object.
+
+Searches all elements under this object and returns the first object to match the criteria, or not found if no matching objects are found.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import culebratester_client
+from culebratester_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = culebratester_client.DefaultApi()
+body = culebratester_client.Selector() # Selector | Selector
+oid = 56 # int | The object ID
+
+try:
+    # Finds an object.
+    api_response = api_instance.ui_object2_oid_find_object_post(body, oid)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling DefaultApi->ui_object2_oid_find_object_post: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**Selector**](Selector.md)| Selector | 
+ **oid** | **int**| The object ID | 
+
+### Return type
+
+[**ObjectRef**](ObjectRef.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
