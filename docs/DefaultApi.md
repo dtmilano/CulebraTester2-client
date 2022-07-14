@@ -37,6 +37,11 @@ Method | HTTP request | Description
 [**ui_device_last_traversed_text_get**](DefaultApi.md#ui_device_last_traversed_text_get) | **GET** /uiDevice/lastTraversedText | Retrieves the text from the last UI traversal event received.
 [**ui_device_pixel_get**](DefaultApi.md#ui_device_pixel_get) | **GET** /uiDevice/pixel | Gets a pixel from device screen.
 [**ui_device_press_back_get**](DefaultApi.md#ui_device_press_back_get) | **GET** /uiDevice/pressBack | Simulates a short press on the BACK button.
+[**ui_device_press_d_pad_center_get**](DefaultApi.md#ui_device_press_d_pad_center_get) | **GET** /uiDevice/pressDPadCenter | Simulates a short press on the CENTER button.
+[**ui_device_press_d_pad_down_get**](DefaultApi.md#ui_device_press_d_pad_down_get) | **GET** /uiDevice/pressDPadDown | Simulates a short press on the DOWN button.
+[**ui_device_press_d_pad_left_get**](DefaultApi.md#ui_device_press_d_pad_left_get) | **GET** /uiDevice/pressDPadLeft | Simulates a short press on the LEFT button.
+[**ui_device_press_d_pad_right_get**](DefaultApi.md#ui_device_press_d_pad_right_get) | **GET** /uiDevice/pressDPadRight | Simulates a short press on the RIGHT button.
+[**ui_device_press_d_pad_up_get**](DefaultApi.md#ui_device_press_d_pad_up_get) | **GET** /uiDevice/pressDPadUp | Simulates a short press on the UP button.
 [**ui_device_press_delete_get**](DefaultApi.md#ui_device_press_delete_get) | **GET** /uiDevice/pressDelete | Simulates a short press on the DELETE key.
 [**ui_device_press_enter_get**](DefaultApi.md#ui_device_press_enter_get) | **GET** /uiDevice/pressEnter | Simulates a short press on the ENTER key.
 [**ui_device_press_home_get**](DefaultApi.md#ui_device_press_home_get) | **GET** /uiDevice/pressHome | Simulates a short press on the HOME button.
@@ -1591,6 +1596,226 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling DefaultApi->ui_device_press_back_get: %s\n" % e)
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**StatusResponse**](StatusResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ui_device_press_d_pad_center_get**
+> StatusResponse ui_device_press_d_pad_center_get()
+
+Simulates a short press on the CENTER button.
+
+Simulates a short press on the CENTER button.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import culebratester_client
+from culebratester_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = culebratester_client.DefaultApi()
+
+try:
+    # Simulates a short press on the CENTER button.
+    api_response = api_instance.ui_device_press_d_pad_center_get()
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling DefaultApi->ui_device_press_d_pad_center_get: %s\n" % e)
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**StatusResponse**](StatusResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ui_device_press_d_pad_down_get**
+> StatusResponse ui_device_press_d_pad_down_get()
+
+Simulates a short press on the DOWN button.
+
+Simulates a short press on the DOWN button.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import culebratester_client
+from culebratester_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = culebratester_client.DefaultApi()
+
+try:
+    # Simulates a short press on the DOWN button.
+    api_response = api_instance.ui_device_press_d_pad_down_get()
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling DefaultApi->ui_device_press_d_pad_down_get: %s\n" % e)
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**StatusResponse**](StatusResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ui_device_press_d_pad_left_get**
+> StatusResponse ui_device_press_d_pad_left_get()
+
+Simulates a short press on the LEFT button.
+
+Simulates a short press on the LEFT button.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import culebratester_client
+from culebratester_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = culebratester_client.DefaultApi()
+
+try:
+    # Simulates a short press on the LEFT button.
+    api_response = api_instance.ui_device_press_d_pad_left_get()
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling DefaultApi->ui_device_press_d_pad_left_get: %s\n" % e)
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**StatusResponse**](StatusResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ui_device_press_d_pad_right_get**
+> StatusResponse ui_device_press_d_pad_right_get()
+
+Simulates a short press on the RIGHT button.
+
+Simulates a short press on the RIGHT button.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import culebratester_client
+from culebratester_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = culebratester_client.DefaultApi()
+
+try:
+    # Simulates a short press on the RIGHT button.
+    api_response = api_instance.ui_device_press_d_pad_right_get()
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling DefaultApi->ui_device_press_d_pad_right_get: %s\n" % e)
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**StatusResponse**](StatusResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ui_device_press_d_pad_up_get**
+> StatusResponse ui_device_press_d_pad_up_get()
+
+Simulates a short press on the UP button.
+
+Simulates a short press on the UP button.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import culebratester_client
+from culebratester_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = culebratester_client.DefaultApi()
+
+try:
+    # Simulates a short press on the UP button.
+    api_response = api_instance.ui_device_press_d_pad_up_get()
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling DefaultApi->ui_device_press_d_pad_up_get: %s\n" % e)
 ```
 
 ### Parameters
