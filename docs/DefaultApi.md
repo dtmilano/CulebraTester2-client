@@ -10,6 +10,8 @@ Method | HTTP request | Description
 [**culebra_info_get**](DefaultApi.md#culebra_info_get) | **GET** /culebra/info | Gets information about this app.
 [**device_display_real_size_get**](DefaultApi.md#device_display_real_size_get) | **GET** /device/displayRealSize | Gets display real size.
 [**device_dumpsys_get**](DefaultApi.md#device_dumpsys_get) | **GET** /device/dumpsys | 
+[**device_locale_get**](DefaultApi.md#device_locale_get) | **GET** /device/locale | 
+[**device_locale_post**](DefaultApi.md#device_locale_post) | **POST** /device/locale | 
 [**device_wait_for_new_toast_get**](DefaultApi.md#device_wait_for_new_toast_get) | **GET** /device/waitForNewToast | Waits for a new Toast.
 [**object_store_clear_get**](DefaultApi.md#object_store_clear_get) | **GET** /objectStore/clear | Clears all the objects in store.
 [**object_store_list_get**](DefaultApi.md#object_store_list_get) | **GET** /objectStore/list | Lists the objects in store.
@@ -349,6 +351,96 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: text/plain
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **device_locale_get**
+> Locale device_locale_get()
+
+
+
+Gets the device locale
+
+### Example
+```python
+from __future__ import print_function
+import time
+import culebratester_client
+from culebratester_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = culebratester_client.DefaultApi()
+
+try:
+    api_response = api_instance.device_locale_get()
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling DefaultApi->device_locale_get: %s\n" % e)
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**Locale**](Locale.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **device_locale_post**
+> StatusResponse device_locale_post(body)
+
+
+
+Changes the device locale
+
+### Example
+```python
+from __future__ import print_function
+import time
+import culebratester_client
+from culebratester_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = culebratester_client.DefaultApi()
+body = culebratester_client.Locale() # Locale | The locale
+
+try:
+    api_response = api_instance.device_locale_post(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling DefaultApi->device_locale_post: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**Locale**](Locale.md)| The locale | 
+
+### Return type
+
+[**StatusResponse**](StatusResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

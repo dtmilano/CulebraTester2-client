@@ -15,12 +15,12 @@ from __future__ import absolute_import
 import unittest
 
 import culebratester_client
-from culebratester_client.models.selector import Selector  # noqa: E501
+from culebratester_client.models.locale import Locale  # noqa: E501
 from culebratester_client.rest import ApiException
 
 
-class TestSelector(unittest.TestCase):
-    """Selector unit test stubs"""
+class TestLocale(unittest.TestCase):
+    """Locale unit test stubs"""
 
     def setUp(self):
         pass
@@ -28,10 +28,10 @@ class TestSelector(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testSelector(self):
-        """Test Selector"""
+    def testLocale(self):
+        """Test Locale"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = culebratester_client.models.selector.Selector()  # noqa: E501
+        # model = culebratester_client.models.locale.Locale()  # noqa: E501
         pass
 
 
