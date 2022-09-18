@@ -4,6 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **checkable** | **bool** |  | [optional] 
+**checked** | **bool** |  | [optional] 
 **clazz** | **str** |  | [optional] 
 **clickable** | **bool** |  | [optional] 
 **depth** | **int** |  | [optional] 
