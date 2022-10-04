@@ -15,12 +15,12 @@ from __future__ import absolute_import
 import unittest
 
 import culebratester_client
-from culebratester_client.models.boolean_response import BooleanResponse  # noqa: E501
+from culebratester_client.models.perform_two_pointer_gesture_body import PerformTwoPointerGestureBody  # noqa: E501
 from culebratester_client.rest import ApiException
 
 
-class TestBooleanResponse(unittest.TestCase):
-    """BooleanResponse unit test stubs"""
+class TestPerformTwoPointerGestureBody(unittest.TestCase):
+    """PerformTwoPointerGestureBody unit test stubs"""
 
     def setUp(self):
         pass
@@ -28,10 +28,10 @@ class TestBooleanResponse(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testBooleanResponse(self):
-        """Test BooleanResponse"""
+    def testPerformTwoPointerGestureBody(self):
+        """Test PerformTwoPointerGestureBody"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = culebratester_client.models.boolean_response.BooleanResponse()  # noqa: E501
+        # model = culebratester_client.models.perform_two_pointer_gesture_body.PerformTwoPointerGestureBody()  # noqa: E501
         pass
 
 

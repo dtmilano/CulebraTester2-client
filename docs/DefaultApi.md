@@ -68,6 +68,7 @@ Method | HTTP request | Description
 [**ui_object2_oid_long_click_get**](DefaultApi.md#ui_object2_oid_long_click_get) | **GET** /uiObject2/{oid}/longClick | Long-clicks on the specified object.
 [**ui_object2_oid_set_text_get**](DefaultApi.md#ui_object2_oid_set_text_get) | **GET** /uiObject2/{oid}/setText | Sets the text content if this object is an editable field.
 [**ui_object2_oid_set_text_post**](DefaultApi.md#ui_object2_oid_set_text_post) | **POST** /uiObject2/{oid}/setText | Sets the text content if this object is an editable field.
+[**ui_object_oid_perform_two_pointer_gesture_post**](DefaultApi.md#ui_object_oid_perform_two_pointer_gesture_post) | **POST** /uiObject/{oid}/performTwoPointerGesture | 
 [**until_find_object_get**](DefaultApi.md#until_find_object_get) | **GET** /until/findObject | Returns a SearchCondition that is satisfied when at least one element matching the selector can be found.
 [**until_find_object_post**](DefaultApi.md#until_find_object_post) | **POST** /until/findObject | Returns a SearchCondition that is satisfied when at least one element matching the selector can be found.
 [**until_find_objects_get**](DefaultApi.md#until_find_objects_get) | **GET** /until/findObjects | Returns a SearchCondition that is satisfied when at least one element matching the selector can be found.
@@ -3068,6 +3069,55 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **body** | [**Text**](Text.md)| Text to enter in the field | 
  **oid** | **int**| The object ID | 
+
+### Return type
+
+[**StatusResponse**](StatusResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ui_object_oid_perform_two_pointer_gesture_post**
+> StatusResponse ui_object_oid_perform_two_pointer_gesture_post(oid, body=body)
+
+
+
+Generates a two-pointer gesture with arbitrary starting and ending points.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import culebratester_client
+from culebratester_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = culebratester_client.DefaultApi()
+oid = 56 # int | The object ID
+body = culebratester_client.PerformTwoPointerGestureBody() # PerformTwoPointerGestureBody |  (optional)
+
+try:
+    api_response = api_instance.ui_object_oid_perform_two_pointer_gesture_post(oid, body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling DefaultApi->ui_object_oid_perform_two_pointer_gesture_post: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **oid** | **int**| The object ID | 
+ **body** | [**PerformTwoPointerGestureBody**](PerformTwoPointerGestureBody.md)|  | [optional] 
 
 ### Return type
 
