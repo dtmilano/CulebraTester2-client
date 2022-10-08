@@ -20,7 +20,7 @@ sgr0=$(tput sgr0)
 
 if which -s gh
 then
-    $dry_run gh release create --title "$title" "$tag"
+    $dry_run gh release create --title "$title" --generate-notes "$tag"
 else
     printf '\nNext steps:\n'
     printf '1. Create new release on Github using tag=%s title=%s\n' "$tag" "$title"
