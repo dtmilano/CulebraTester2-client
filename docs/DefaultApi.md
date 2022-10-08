@@ -69,6 +69,8 @@ Method | HTTP request | Description
 [**ui_object2_oid_set_text_get**](DefaultApi.md#ui_object2_oid_set_text_get) | **GET** /uiObject2/{oid}/setText | Sets the text content if this object is an editable field.
 [**ui_object2_oid_set_text_post**](DefaultApi.md#ui_object2_oid_set_text_post) | **POST** /uiObject2/{oid}/setText | Sets the text content if this object is an editable field.
 [**ui_object_oid_perform_two_pointer_gesture_post**](DefaultApi.md#ui_object_oid_perform_two_pointer_gesture_post) | **POST** /uiObject/{oid}/performTwoPointerGesture | 
+[**ui_object_oid_pinch_in_get**](DefaultApi.md#ui_object_oid_pinch_in_get) | **GET** /uiObject/{oid}/pinchIn | 
+[**ui_object_oid_pinch_out_get**](DefaultApi.md#ui_object_oid_pinch_out_get) | **GET** /uiObject/{oid}/pinchOut | 
 [**until_find_object_get**](DefaultApi.md#until_find_object_get) | **GET** /until/findObject | Returns a SearchCondition that is satisfied when at least one element matching the selector can be found.
 [**until_find_object_post**](DefaultApi.md#until_find_object_post) | **POST** /until/findObject | Returns a SearchCondition that is satisfied when at least one element matching the selector can be found.
 [**until_find_objects_get**](DefaultApi.md#until_find_objects_get) | **GET** /until/findObjects | Returns a SearchCondition that is satisfied when at least one element matching the selector can be found.
@@ -3130,6 +3132,108 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ui_object_oid_pinch_in_get**
+> StatusResponse ui_object_oid_pinch_in_get(oid, percentage, steps)
+
+
+
+Performs a two-pointer gesture, where each pointer moves diagonally toward the other, from the edges to the center of this UiObject.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import culebratester_client
+from culebratester_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = culebratester_client.DefaultApi()
+oid = 56 # int | The object ID
+percentage = 56 # int | percentage of the object's diagonal length for the pinch gesture
+steps = 56 # int | the number of steps for the gesture. Steps are injected about 5 milliseconds apart, so 100 steps may take around 0.5 seconds to complete.
+
+try:
+    api_response = api_instance.ui_object_oid_pinch_in_get(oid, percentage, steps)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling DefaultApi->ui_object_oid_pinch_in_get: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **oid** | **int**| The object ID | 
+ **percentage** | **int**| percentage of the object&#x27;s diagonal length for the pinch gesture | 
+ **steps** | **int**| the number of steps for the gesture. Steps are injected about 5 milliseconds apart, so 100 steps may take around 0.5 seconds to complete. | 
+
+### Return type
+
+[**StatusResponse**](StatusResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ui_object_oid_pinch_out_get**
+> StatusResponse ui_object_oid_pinch_out_get(oid, percentage, steps)
+
+
+
+Performs a two-pointer gesture, where each pointer moves diagonally opposite across the other, from the center out towards the edges of the this UiObject.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import culebratester_client
+from culebratester_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = culebratester_client.DefaultApi()
+oid = 56 # int | The object ID
+percentage = 56 # int | percentage of the object's diagonal length for the pinch gesture
+steps = 56 # int | the number of steps for the gesture. Steps are injected about 5 milliseconds apart, so 100 steps may take around 0.5 seconds to complete.
+
+try:
+    api_response = api_instance.ui_object_oid_pinch_out_get(oid, percentage, steps)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling DefaultApi->ui_object_oid_pinch_out_get: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **oid** | **int**| The object ID | 
+ **percentage** | **int**| percentage of the object&#x27;s diagonal length for the pinch gesture | 
+ **steps** | **int**| the number of steps for the gesture. Steps are injected about 5 milliseconds apart, so 100 steps may take around 0.5 seconds to complete. | 
+
+### Return type
+
+[**StatusResponse**](StatusResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
