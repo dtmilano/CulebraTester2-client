@@ -68,9 +68,11 @@ Method | HTTP request | Description
 [**ui_object2_oid_long_click_get**](DefaultApi.md#ui_object2_oid_long_click_get) | **GET** /uiObject2/{oid}/longClick | Long-clicks on the specified object.
 [**ui_object2_oid_set_text_get**](DefaultApi.md#ui_object2_oid_set_text_get) | **GET** /uiObject2/{oid}/setText | Sets the text content if this object is an editable field.
 [**ui_object2_oid_set_text_post**](DefaultApi.md#ui_object2_oid_set_text_post) | **POST** /uiObject2/{oid}/setText | Sets the text content if this object is an editable field.
+[**ui_object_oid_exists_get**](DefaultApi.md#ui_object_oid_exists_get) | **GET** /uiObject/{oid}/exists | This basically returns immediately whether the view represented by this UiObject exists or not. If you need to wait longer for this view, then see waitForExists.
 [**ui_object_oid_perform_two_pointer_gesture_post**](DefaultApi.md#ui_object_oid_perform_two_pointer_gesture_post) | **POST** /uiObject/{oid}/performTwoPointerGesture | 
 [**ui_object_oid_pinch_in_get**](DefaultApi.md#ui_object_oid_pinch_in_get) | **GET** /uiObject/{oid}/pinchIn | 
 [**ui_object_oid_pinch_out_get**](DefaultApi.md#ui_object_oid_pinch_out_get) | **GET** /uiObject/{oid}/pinchOut | 
+[**ui_object_oid_wait_for_exists_get**](DefaultApi.md#ui_object_oid_wait_for_exists_get) | **GET** /uiObject/{oid}/waitForExists | This method waits until the view becomes visible on the display, or until the timeout has elapsed. You can use this method in situations where the content that you want to select is not immediately displayed.
 [**until_find_object_get**](DefaultApi.md#until_find_object_get) | **GET** /until/findObject | Returns a SearchCondition that is satisfied when at least one element matching the selector can be found.
 [**until_find_object_post**](DefaultApi.md#until_find_object_post) | **POST** /until/findObject | Returns a SearchCondition that is satisfied when at least one element matching the selector can be found.
 [**until_find_objects_get**](DefaultApi.md#until_find_objects_get) | **GET** /until/findObjects | Returns a SearchCondition that is satisfied when at least one element matching the selector can be found.
@@ -3087,6 +3089,54 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **ui_object_oid_exists_get**
+> BooleanResponse ui_object_oid_exists_get(oid)
+
+This basically returns immediately whether the view represented by this UiObject exists or not. If you need to wait longer for this view, then see waitForExists.
+
+Check if view exists. This methods performs a waitForExists with zero timeout.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import culebratester_client
+from culebratester_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = culebratester_client.DefaultApi()
+oid = 56 # int | The object ID
+
+try:
+    # This basically returns immediately whether the view represented by this UiObject exists or not. If you need to wait longer for this view, then see waitForExists.
+    api_response = api_instance.ui_object_oid_exists_get(oid)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling DefaultApi->ui_object_oid_exists_get: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **oid** | **int**| The object ID | 
+
+### Return type
+
+[**BooleanResponse**](BooleanResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **ui_object_oid_perform_two_pointer_gesture_post**
 > StatusResponse ui_object_oid_perform_two_pointer_gesture_post(oid, body=body)
 
@@ -3226,6 +3276,56 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**StatusResponse**](StatusResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ui_object_oid_wait_for_exists_get**
+> BooleanResponse ui_object_oid_wait_for_exists_get(oid, timeout)
+
+This method waits until the view becomes visible on the display, or until the timeout has elapsed. You can use this method in situations where the content that you want to select is not immediately displayed.
+
+Waits a specified length of time for a view to become visible.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import culebratester_client
+from culebratester_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = culebratester_client.DefaultApi()
+oid = 56 # int | The object ID
+timeout = 789 # int | the amount of time to wait (in milliseconds)
+
+try:
+    # This method waits until the view becomes visible on the display, or until the timeout has elapsed. You can use this method in situations where the content that you want to select is not immediately displayed.
+    api_response = api_instance.ui_object_oid_wait_for_exists_get(oid, timeout)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling DefaultApi->ui_object_oid_wait_for_exists_get: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **oid** | **int**| The object ID | 
+ **timeout** | **int**| the amount of time to wait (in milliseconds) | 
+
+### Return type
+
+[**BooleanResponse**](BooleanResponse.md)
 
 ### Authorization
 
