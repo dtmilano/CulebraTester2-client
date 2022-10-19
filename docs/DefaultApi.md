@@ -68,7 +68,9 @@ Method | HTTP request | Description
 [**ui_object2_oid_long_click_get**](DefaultApi.md#ui_object2_oid_long_click_get) | **GET** /uiObject2/{oid}/longClick | Long-clicks on the specified object.
 [**ui_object2_oid_set_text_get**](DefaultApi.md#ui_object2_oid_set_text_get) | **GET** /uiObject2/{oid}/setText | Sets the text content if this object is an editable field.
 [**ui_object2_oid_set_text_post**](DefaultApi.md#ui_object2_oid_set_text_post) | **POST** /uiObject2/{oid}/setText | Sets the text content if this object is an editable field.
+[**ui_object_oid_dump_get**](DefaultApi.md#ui_object_oid_dump_get) | **GET** /uiObject/{oid}/dump | Dumps the specified object.
 [**ui_object_oid_exists_get**](DefaultApi.md#ui_object_oid_exists_get) | **GET** /uiObject/{oid}/exists | This basically returns immediately whether the view represented by this UiObject exists or not. If you need to wait longer for this view, then see waitForExists.
+[**ui_object_oid_get_child_count_get**](DefaultApi.md#ui_object_oid_get_child_count_get) | **GET** /uiObject/{oid}/getChildCount | Counts the child views immediately under the present UiObject.
 [**ui_object_oid_perform_two_pointer_gesture_post**](DefaultApi.md#ui_object_oid_perform_two_pointer_gesture_post) | **POST** /uiObject/{oid}/performTwoPointerGesture | 
 [**ui_object_oid_pinch_in_get**](DefaultApi.md#ui_object_oid_pinch_in_get) | **GET** /uiObject/{oid}/pinchIn | 
 [**ui_object_oid_pinch_out_get**](DefaultApi.md#ui_object_oid_pinch_out_get) | **GET** /uiObject/{oid}/pinchOut | 
@@ -3089,6 +3091,54 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **ui_object_oid_dump_get**
+> Selector ui_object_oid_dump_get(oid)
+
+Dumps the specified object.
+
+The target object should have been found using `findObject` with a `selector`.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import culebratester_client
+from culebratester_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = culebratester_client.DefaultApi()
+oid = 56 # int | The object ID
+
+try:
+    # Dumps the specified object.
+    api_response = api_instance.ui_object_oid_dump_get(oid)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling DefaultApi->ui_object_oid_dump_get: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **oid** | **int**| The object ID | 
+
+### Return type
+
+[**Selector**](Selector.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **ui_object_oid_exists_get**
 > BooleanResponse ui_object_oid_exists_get(oid)
 
@@ -3125,6 +3175,54 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**BooleanResponse**](BooleanResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ui_object_oid_get_child_count_get**
+> NumberResponse ui_object_oid_get_child_count_get(oid)
+
+Counts the child views immediately under the present UiObject.
+
+Counts the child views immediately under the present UiObject.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import culebratester_client
+from culebratester_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = culebratester_client.DefaultApi()
+oid = 56 # int | The object ID
+
+try:
+    # Counts the child views immediately under the present UiObject.
+    api_response = api_instance.ui_object_oid_get_child_count_get(oid)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling DefaultApi->ui_object_oid_get_child_count_get: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **oid** | **int**| The object ID | 
+
+### Return type
+
+[**NumberResponse**](NumberResponse.md)
 
 ### Authorization
 

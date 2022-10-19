@@ -15,12 +15,12 @@ from __future__ import absolute_import
 import unittest
 
 import culebratester_client
-from culebratester_client.models.timeout import Timeout  # noqa: E501
+from culebratester_client.models.number_response import NumberResponse  # noqa: E501
 from culebratester_client.rest import ApiException
 
 
-class TestTimeout(unittest.TestCase):
-    """Timeout unit test stubs"""
+class TestNumberResponse(unittest.TestCase):
+    """NumberResponse unit test stubs"""
 
     def setUp(self):
         pass
@@ -28,10 +28,10 @@ class TestTimeout(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testTimeout(self):
-        """Test Timeout"""
+    def testNumberResponse(self):
+        """Test NumberResponse"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = culebratester_client.models.timeout.Timeout()  # noqa: E501
+        # model = culebratester_client.models.number_response.NumberResponse()  # noqa: E501
         pass
 
 
