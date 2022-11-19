@@ -8,6 +8,7 @@ Method | HTTP request | Description
 [**configurator_set_wait_for_idle_timeout_get**](DefaultApi.md#configurator_set_wait_for_idle_timeout_get) | **GET** /configurator/setWaitForIdleTimeout | Sets the timeout for waiting for the user interface to go into an idle state before starting a uiautomator action.
 [**culebra_help_api_get**](DefaultApi.md#culebra_help_api_get) | **GET** /culebra/help/{api} | Gets help
 [**culebra_info_get**](DefaultApi.md#culebra_info_get) | **GET** /culebra/info | Gets information about this app.
+[**culebra_quit_get**](DefaultApi.md#culebra_quit_get) | **GET** /culebra/quit | Quits culebra server.
 [**device_display_real_size_get**](DefaultApi.md#device_display_real_size_get) | **GET** /device/displayRealSize | Gets display real size.
 [**device_dumpsys_get**](DefaultApi.md#device_dumpsys_get) | **GET** /device/dumpsys | 
 [**device_locale_get**](DefaultApi.md#device_locale_get) | **GET** /device/locale | 
@@ -68,6 +69,8 @@ Method | HTTP request | Description
 [**ui_object2_oid_long_click_get**](DefaultApi.md#ui_object2_oid_long_click_get) | **GET** /uiObject2/{oid}/longClick | Long-clicks on the specified object.
 [**ui_object2_oid_set_text_get**](DefaultApi.md#ui_object2_oid_set_text_get) | **GET** /uiObject2/{oid}/setText | Sets the text content if this object is an editable field.
 [**ui_object2_oid_set_text_post**](DefaultApi.md#ui_object2_oid_set_text_post) | **POST** /uiObject2/{oid}/setText | Sets the text content if this object is an editable field.
+[**ui_object_oid_click_and_wait_for_new_window_get**](DefaultApi.md#ui_object_oid_click_and_wait_for_new_window_get) | **GET** /uiObject/{oid}/clickAndWaitForNewWindow | Clicks on the specified object.
+[**ui_object_oid_click_get**](DefaultApi.md#ui_object_oid_click_get) | **GET** /uiObject/{oid}/click | Clicks on the specified object.
 [**ui_object_oid_dump_get**](DefaultApi.md#ui_object_oid_dump_get) | **GET** /uiObject/{oid}/dump | Dumps the specified object.
 [**ui_object_oid_exists_get**](DefaultApi.md#ui_object_oid_exists_get) | **GET** /uiObject/{oid}/exists | This basically returns immediately whether the view represented by this UiObject exists or not. If you need to wait longer for this view, then see waitForExists.
 [**ui_object_oid_get_child_count_get**](DefaultApi.md#ui_object_oid_get_child_count_get) | **GET** /uiObject/{oid}/getChildCount | Counts the child views immediately under the present UiObject.
@@ -80,6 +83,7 @@ Method | HTTP request | Description
 [**until_find_objects_get**](DefaultApi.md#until_find_objects_get) | **GET** /until/findObjects | Returns a SearchCondition that is satisfied when at least one element matching the selector can be found.
 [**until_find_objects_post**](DefaultApi.md#until_find_objects_post) | **POST** /until/findObjects | Returns a SearchCondition that is satisfied when at least one element matching the selector can be found.
 [**until_new_window_get**](DefaultApi.md#until_new_window_get) | **GET** /until/newWindow | Returns a condition that depends on a new window having appeared.
+[**until_oid_dump_get**](DefaultApi.md#until_oid_dump_get) | **GET** /until/{oid}/dump | Dumps the specified object.
 
 # **configurator_get_wait_for_idle_timeout_get**
 > Timeout configurator_get_wait_for_idle_timeout_get()
@@ -253,6 +257,50 @@ This endpoint does not need any parameter.
 ### Return type
 
 [**CulebraInfo**](CulebraInfo.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **culebra_quit_get**
+> StatusResponse culebra_quit_get()
+
+Quits culebra server.
+
+Quits cuebra server.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import culebratester_client
+from culebratester_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = culebratester_client.DefaultApi()
+
+try:
+    # Quits culebra server.
+    api_response = api_instance.culebra_quit_get()
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling DefaultApi->culebra_quit_get: %s\n" % e)
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**StatusResponse**](StatusResponse.md)
 
 ### Authorization
 
@@ -3091,6 +3139,104 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **ui_object_oid_click_and_wait_for_new_window_get**
+> BooleanResponse ui_object_oid_click_and_wait_for_new_window_get(oid, timeout=timeout)
+
+Clicks on the specified object.
+
+Performs a click at the center of the visible bounds of the UI element represented by this UiObject and waits for window transitions. This method differ from click only in that this method waits for a a new window transition as a result of the click.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import culebratester_client
+from culebratester_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = culebratester_client.DefaultApi()
+oid = 56 # int | The object ID
+timeout = 10000 # int | Timeout in milliseconds (optional) (default to 10000)
+
+try:
+    # Clicks on the specified object.
+    api_response = api_instance.ui_object_oid_click_and_wait_for_new_window_get(oid, timeout=timeout)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling DefaultApi->ui_object_oid_click_and_wait_for_new_window_get: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **oid** | **int**| The object ID | 
+ **timeout** | **int**| Timeout in milliseconds | [optional] [default to 10000]
+
+### Return type
+
+[**BooleanResponse**](BooleanResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ui_object_oid_click_get**
+> StatusResponse ui_object_oid_click_get(oid)
+
+Clicks on the specified object.
+
+The target object should have been found using `findObject` with a `selector`.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import culebratester_client
+from culebratester_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = culebratester_client.DefaultApi()
+oid = 56 # int | The object ID
+
+try:
+    # Clicks on the specified object.
+    api_response = api_instance.ui_object_oid_click_get(oid)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling DefaultApi->ui_object_oid_click_get: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **oid** | **int**| The object ID | 
+
+### Return type
+
+[**StatusResponse**](StatusResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **ui_object_oid_dump_get**
 > Selector ui_object_oid_dump_get(oid)
 
@@ -3669,6 +3815,54 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **until_oid_dump_get**
+> str until_oid_dump_get(oid)
+
+Dumps the specified object.
+
+Dumps the Until object.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import culebratester_client
+from culebratester_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = culebratester_client.DefaultApi()
+oid = 56 # int | The object ID
+
+try:
+    # Dumps the specified object.
+    api_response = api_instance.until_oid_dump_get(oid)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling DefaultApi->until_oid_dump_get: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **oid** | **int**| The object ID | 
+
+### Return type
+
+**str**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
