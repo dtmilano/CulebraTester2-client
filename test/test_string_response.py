@@ -15,12 +15,12 @@ from __future__ import absolute_import
 import unittest
 
 import culebratester_client
-from culebratester_client.models.display_real_size import DisplayRealSize  # noqa: E501
+from culebratester_client.models.string_response import StringResponse  # noqa: E501
 from culebratester_client.rest import ApiException
 
 
-class TestDisplayRealSize(unittest.TestCase):
-    """DisplayRealSize unit test stubs"""
+class TestStringResponse(unittest.TestCase):
+    """StringResponse unit test stubs"""
 
     def setUp(self):
         pass
@@ -28,10 +28,10 @@ class TestDisplayRealSize(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testDisplayRealSize(self):
-        """Test DisplayRealSize"""
+    def testStringResponse(self):
+        """Test StringResponse"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = culebratester_client.models.display_real_size.DisplayRealSize()  # noqa: E501
+        # model = culebratester_client.models.string_response.StringResponse()  # noqa: E501
         pass
 
 
