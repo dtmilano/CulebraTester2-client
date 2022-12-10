@@ -15,12 +15,12 @@ from __future__ import absolute_import
 import unittest
 
 import culebratester_client
-from culebratester_client.models.locale import Locale  # noqa: E501
+from culebratester_client.models.inline_response2001 import InlineResponse2001  # noqa: E501
 from culebratester_client.rest import ApiException
 
 
-class TestLocale(unittest.TestCase):
-    """Locale unit test stubs"""
+class TestInlineResponse2001(unittest.TestCase):
+    """InlineResponse2001 unit test stubs"""
 
     def setUp(self):
         pass
@@ -28,10 +28,10 @@ class TestLocale(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testLocale(self):
-        """Test Locale"""
+    def testInlineResponse2001(self):
+        """Test InlineResponse2001"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = culebratester_client.models.locale.Locale()  # noqa: E501
+        # model = culebratester_client.models.inline_response2001.InlineResponse2001()  # noqa: E501
         pass
 
 

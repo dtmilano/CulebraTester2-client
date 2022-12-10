@@ -64,6 +64,8 @@ Method | HTTP request | Description
 [**ui_object2_oid_dump_get**](DefaultApi.md#ui_object2_oid_dump_get) | **GET** /uiObject2/{oid}/dump | Dumps the specified object.
 [**ui_object2_oid_find_object_get**](DefaultApi.md#ui_object2_oid_find_object_get) | **GET** /uiObject2/{oid}/findObject | Finds an object.
 [**ui_object2_oid_find_object_post**](DefaultApi.md#ui_object2_oid_find_object_post) | **POST** /uiObject2/{oid}/findObject | Finds an object.
+[**ui_object2_oid_get_child_count_get**](DefaultApi.md#ui_object2_oid_get_child_count_get) | **GET** /uiObject2/{oid}/getChildCount | Returns the number of child elements directly under this object.
+[**ui_object2_oid_get_children_get**](DefaultApi.md#ui_object2_oid_get_children_get) | **GET** /uiObject2/{oid}/getChildren | 
 [**ui_object2_oid_get_content_description_get**](DefaultApi.md#ui_object2_oid_get_content_description_get) | **GET** /uiObject2/{oid}/getContentDescription | Returns the content description for this object.
 [**ui_object2_oid_get_text_get**](DefaultApi.md#ui_object2_oid_get_text_get) | **GET** /uiObject2/{oid}/getText | Gets the text content.
 [**ui_object2_oid_long_click_get**](DefaultApi.md#ui_object2_oid_long_click_get) | **GET** /uiObject2/{oid}/longClick | Long-clicks on the specified object.
@@ -2894,6 +2896,101 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ui_object2_oid_get_child_count_get**
+> NumberResponse ui_object2_oid_get_child_count_get(oid)
+
+Returns the number of child elements directly under this object.
+
+Returns the number of child elements directly under this object.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import culebratester_client
+from culebratester_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = culebratester_client.DefaultApi()
+oid = 56 # int | The object ID
+
+try:
+    # Returns the number of child elements directly under this object.
+    api_response = api_instance.ui_object2_oid_get_child_count_get(oid)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling DefaultApi->ui_object2_oid_get_child_count_get: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **oid** | **int**| The object ID | 
+
+### Return type
+
+[**NumberResponse**](NumberResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ui_object2_oid_get_children_get**
+> list[InlineResponse2001] ui_object2_oid_get_children_get(oid)
+
+
+
+Returns a collection of the child elements directly under this object.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import culebratester_client
+from culebratester_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = culebratester_client.DefaultApi()
+oid = 56 # int | The object ID
+
+try:
+    api_response = api_instance.ui_object2_oid_get_children_get(oid)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling DefaultApi->ui_object2_oid_get_children_get: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **oid** | **int**| The object ID | 
+
+### Return type
+
+[**list[InlineResponse2001]**](InlineResponse2001.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
