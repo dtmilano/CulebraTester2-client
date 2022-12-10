@@ -1311,7 +1311,7 @@ No authorization required
 
 Finds *all* objects that match the selector criteria.
 
-Finds an object. The object found, if any, can be later used in other call like API.click.
+Finds objects. The object found, if any, can be later used in other call like API.click.
 
 ### Example
 ```python
@@ -2949,7 +2949,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **ui_object2_oid_get_children_get**
-> list[InlineResponse2001] ui_object2_oid_get_children_get(oid)
+> list[ObjectRef] ui_object2_oid_get_children_get(oid)
 
 
 
@@ -2982,7 +2982,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**list[InlineResponse2001]**](InlineResponse2001.md)
+[**list[ObjectRef]**](ObjectRef.md)
 
 ### Authorization
 
