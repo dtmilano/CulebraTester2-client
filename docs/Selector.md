@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **clickable** | **bool** |  | [optional] 
 **depth** | **int** |  | [optional] 
 **desc** | **str** |  | [optional] 
+**has_child** | [**Selector**](Selector.md) |  | [optional] 
 **pkg** | **str** |  | [optional] 
 **res** | **str** |  | [optional] 
 **scrollable** | **bool** |  | [optional] 
