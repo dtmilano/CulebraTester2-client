@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **depth** | **int** |  | [optional] 
 **desc** | **str** |  | [optional] 
 **has_child** | [**Selector**](Selector.md) |  | [optional] 
+**has_descendant** | [**Selector**](Selector.md) |  | [optional] 
 **pkg** | **str** |  | [optional] 
 **res** | **str** |  | [optional] 
 **scrollable** | **bool** |  | [optional] 
