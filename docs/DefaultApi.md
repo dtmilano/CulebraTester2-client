@@ -4,6 +4,7 @@ All URIs are relative to *http://localhost:9987/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**am_force_stop_get**](DefaultApi.md#am_force_stop_get) | **GET** /am/forceStop | Completely stop the given application package.
 [**configurator_get_wait_for_idle_timeout_get**](DefaultApi.md#configurator_get_wait_for_idle_timeout_get) | **GET** /configurator/getWaitForIdleTimeout | Gets the current timeout used for waiting for the user interface to go into an idle state.
 [**configurator_set_wait_for_idle_timeout_get**](DefaultApi.md#configurator_set_wait_for_idle_timeout_get) | **GET** /configurator/setWaitForIdleTimeout | Sets the timeout for waiting for the user interface to go into an idle state before starting a uiautomator action.
 [**culebra_help_api_get**](DefaultApi.md#culebra_help_api_get) | **GET** /culebra/help/{api} | Gets help
@@ -76,7 +77,9 @@ Method | HTTP request | Description
 [**ui_object_oid_click_get**](DefaultApi.md#ui_object_oid_click_get) | **GET** /uiObject/{oid}/click | Clicks on the specified object.
 [**ui_object_oid_dump_get**](DefaultApi.md#ui_object_oid_dump_get) | **GET** /uiObject/{oid}/dump | Dumps the specified object.
 [**ui_object_oid_exists_get**](DefaultApi.md#ui_object_oid_exists_get) | **GET** /uiObject/{oid}/exists | This basically returns immediately whether the view represented by this UiObject exists or not. If you need to wait longer for this view, then see waitForExists.
+[**ui_object_oid_get_bounds_get**](DefaultApi.md#ui_object_oid_get_bounds_get) | **GET** /uiObject/{oid}/getBounds | Returns the view&#x27;s bounds property.
 [**ui_object_oid_get_child_count_get**](DefaultApi.md#ui_object_oid_get_child_count_get) | **GET** /uiObject/{oid}/getChildCount | Counts the child views immediately under the present UiObject.
+[**ui_object_oid_get_child_get**](DefaultApi.md#ui_object_oid_get_child_get) | **GET** /uiObject/{oid}/getChild | The child
 [**ui_object_oid_get_class_name_get**](DefaultApi.md#ui_object_oid_get_class_name_get) | **GET** /uiObject/{oid}/getClassName | Retrieves the className property of the UI element.
 [**ui_object_oid_get_content_description_get**](DefaultApi.md#ui_object_oid_get_content_description_get) | **GET** /uiObject/{oid}/getContentDescription | Reads the content_desc property of the UI element.
 [**ui_object_oid_perform_two_pointer_gesture_post**](DefaultApi.md#ui_object_oid_perform_two_pointer_gesture_post) | **POST** /uiObject/{oid}/performTwoPointerGesture | 
@@ -89,6 +92,54 @@ Method | HTTP request | Description
 [**until_find_objects_post**](DefaultApi.md#until_find_objects_post) | **POST** /until/findObjects | Returns a SearchCondition that is satisfied when at least one element matching the selector can be found.
 [**until_new_window_get**](DefaultApi.md#until_new_window_get) | **GET** /until/newWindow | Returns a condition that depends on a new window having appeared.
 [**until_oid_dump_get**](DefaultApi.md#until_oid_dump_get) | **GET** /until/{oid}/dump | Dumps the specified object.
+
+# **am_force_stop_get**
+> StatusResponse am_force_stop_get(pkg)
+
+Completely stop the given application package.
+
+Completely stop the given application package.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import culebratester_client
+from culebratester_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = culebratester_client.DefaultApi()
+pkg = 'pkg_example' # str | The package name
+
+try:
+    # Completely stop the given application package.
+    api_response = api_instance.am_force_stop_get(pkg)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling DefaultApi->am_force_stop_get: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **pkg** | **str**| The package name | 
+
+### Return type
+
+[**StatusResponse**](StatusResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **configurator_get_wait_for_idle_timeout_get**
 > Timeout configurator_get_wait_for_idle_timeout_get()
@@ -3481,6 +3532,54 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **ui_object_oid_get_bounds_get**
+> Rect ui_object_oid_get_bounds_get(oid)
+
+Returns the view's bounds property.
+
+Returns the view's bounds property. See getVisibleBounds.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import culebratester_client
+from culebratester_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = culebratester_client.DefaultApi()
+oid = 56 # int | The object ID
+
+try:
+    # Returns the view's bounds property.
+    api_response = api_instance.ui_object_oid_get_bounds_get(oid)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling DefaultApi->ui_object_oid_get_bounds_get: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **oid** | **int**| The object ID | 
+
+### Return type
+
+[**Rect**](Rect.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **ui_object_oid_get_child_count_get**
 > NumberResponse ui_object_oid_get_child_count_get(oid)
 
@@ -3517,6 +3616,56 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**NumberResponse**](NumberResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ui_object_oid_get_child_get**
+> ObjectRef ui_object_oid_get_child_get(oid, ui_selector=ui_selector)
+
+The child
+
+Creates a new UiObject for a child view that is under the present UiObject.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import culebratester_client
+from culebratester_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = culebratester_client.DefaultApi()
+oid = 56 # int | The object ID
+ui_selector = 'ui_selector_example' # str | the selector sets the resource name criteria for matching. A UI element will be considered a match if its resource name exactly matches the selector parameter and all other criteria for this selector are met. The format of the selector string is `sel@[\\$]value,...` Where `sel` can be one of - clazz or className - clickable - depth - desc - index - instance - package - parentIndex - res - scrollable - text `@` replaces the `=` sign that is used to separate parameters and values in the URL. If the first character of value is `$` then a `Pattern` is created. (optional)
+
+try:
+    # The child
+    api_response = api_instance.ui_object_oid_get_child_get(oid, ui_selector=ui_selector)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling DefaultApi->ui_object_oid_get_child_get: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **oid** | **int**| The object ID | 
+ **ui_selector** | **str**| the selector sets the resource name criteria for matching. A UI element will be considered a match if its resource name exactly matches the selector parameter and all other criteria for this selector are met. The format of the selector string is &#x60;sel@[\\$]value,...&#x60; Where &#x60;sel&#x60; can be one of - clazz or className - clickable - depth - desc - index - instance - package - parentIndex - res - scrollable - text &#x60;@&#x60; replaces the &#x60;&#x3D;&#x60; sign that is used to separate parameters and values in the URL. If the first character of value is &#x60;$&#x60; then a &#x60;Pattern&#x60; is created. | [optional] 
+
+### Return type
+
+[**ObjectRef**](ObjectRef.md)
 
 ### Authorization
 

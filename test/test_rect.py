@@ -15,12 +15,12 @@ from __future__ import absolute_import
 import unittest
 
 import culebratester_client
-from culebratester_client.models.display_height import DisplayHeight  # noqa: E501
+from culebratester_client.models.rect import Rect  # noqa: E501
 from culebratester_client.rest import ApiException
 
 
-class TestDisplayHeight(unittest.TestCase):
-    """DisplayHeight unit test stubs"""
+class TestRect(unittest.TestCase):
+    """Rect unit test stubs"""
 
     def setUp(self):
         pass
@@ -28,10 +28,10 @@ class TestDisplayHeight(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testDisplayHeight(self):
-        """Test DisplayHeight"""
+    def testRect(self):
+        """Test Rect"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = culebratester_client.models.display_height.DisplayHeight()  # noqa: E501
+        # model = culebratester_client.models.rect.Rect()  # noqa: E501
         pass
 
 
