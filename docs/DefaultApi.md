@@ -82,6 +82,7 @@ Method | HTTP request | Description
 [**ui_object_oid_get_child_get**](DefaultApi.md#ui_object_oid_get_child_get) | **GET** /uiObject/{oid}/getChild | The child
 [**ui_object_oid_get_class_name_get**](DefaultApi.md#ui_object_oid_get_class_name_get) | **GET** /uiObject/{oid}/getClassName | Retrieves the className property of the UI element.
 [**ui_object_oid_get_content_description_get**](DefaultApi.md#ui_object_oid_get_content_description_get) | **GET** /uiObject/{oid}/getContentDescription | Reads the content_desc property of the UI element.
+[**ui_object_oid_get_from_parent_get**](DefaultApi.md#ui_object_oid_get_from_parent_get) | **GET** /uiObject/{oid}/getFromParent | Creates a new UiObject for a sibling view or a child of the sibling view, relative to the present UiObject.
 [**ui_object_oid_perform_two_pointer_gesture_post**](DefaultApi.md#ui_object_oid_perform_two_pointer_gesture_post) | **POST** /uiObject/{oid}/performTwoPointerGesture | 
 [**ui_object_oid_pinch_in_get**](DefaultApi.md#ui_object_oid_pinch_in_get) | **GET** /uiObject/{oid}/pinchIn | 
 [**ui_object_oid_pinch_out_get**](DefaultApi.md#ui_object_oid_pinch_out_get) | **GET** /uiObject/{oid}/pinchOut | 
@@ -3762,6 +3763,56 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**StringResponse**](StringResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ui_object_oid_get_from_parent_get**
+> ObjectRef ui_object_oid_get_from_parent_get(oid, ui_selector=ui_selector)
+
+Creates a new UiObject for a sibling view or a child of the sibling view, relative to the present UiObject.
+
+Creates a new UiObject for a sibling view or a child of the sibling view, relative to the present UiObject.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import culebratester_client
+from culebratester_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = culebratester_client.DefaultApi()
+oid = 56 # int | The object ID
+ui_selector = 'ui_selector_example' # str | the selector sets the resource name criteria for matching. A UI element will be considered a match if its resource name exactly matches the selector parameter and all other criteria for this selector are met. The format of the selector string is `sel@[\\$]value,...` Where `sel` can be one of - clazz or className - clickable - depth - desc - index - instance - package - parentIndex - res - scrollable - text `@` replaces the `=` sign that is used to separate parameters and values in the URL. If the first character of value is `$` then a `Pattern` is created. (optional)
+
+try:
+    # Creates a new UiObject for a sibling view or a child of the sibling view, relative to the present UiObject.
+    api_response = api_instance.ui_object_oid_get_from_parent_get(oid, ui_selector=ui_selector)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling DefaultApi->ui_object_oid_get_from_parent_get: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **oid** | **int**| The object ID | 
+ **ui_selector** | **str**| the selector sets the resource name criteria for matching. A UI element will be considered a match if its resource name exactly matches the selector parameter and all other criteria for this selector are met. The format of the selector string is &#x60;sel@[\\$]value,...&#x60; Where &#x60;sel&#x60; can be one of - clazz or className - clickable - depth - desc - index - instance - package - parentIndex - res - scrollable - text &#x60;@&#x60; replaces the &#x60;&#x3D;&#x60; sign that is used to separate parameters and values in the URL. If the first character of value is &#x60;$&#x60; then a &#x60;Pattern&#x60; is created. | [optional] 
+
+### Return type
+
+[**ObjectRef**](ObjectRef.md)
 
 ### Authorization
 
